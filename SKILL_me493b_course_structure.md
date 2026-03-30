@@ -334,8 +334,6 @@ sentence-transformers
 jupyter
 ```
 
-Keep minimal. Add packages only when a specific project requires them.
-
 ---
 
 ## Student submission workflow
