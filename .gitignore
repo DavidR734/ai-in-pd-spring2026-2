@@ -1,11 +1,22 @@
 # Python environment
 .venv/
 
-# Build scripts (instructor-only)
+# Build scripts (instructor-only). Both legacy (no underscore) and the
+# leading-underscore convention used from MP3 onward.
 MP*/build_notebook.py
+MP*/**/_*.py
+
+# Built RAG indexes (regenerated at runtime by the build scripts)
+chroma_db/
+
+# MCP server runtime logs
+MP*/**/logs/
 
 # Spec documents (hidden until after assignment due dates)
 specs/
+
+# Grading — confidential student work, evaluations, and grades
+grading/
 
 # Claude Code config (instructor-only)
 .claude/
