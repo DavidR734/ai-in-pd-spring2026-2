@@ -1,0 +1,12 @@
+{
+	"servers": {
+		"miniclaw-knowledge": {
+			"type": "stdio",
+			"command": "python",
+			"args": [
+				"/workspaces/ai-in-pd-spring2026-2/MP3/Part B/mcp_server/server.py"
+			]
+		}
+	},
+	"inputs": []
+}
