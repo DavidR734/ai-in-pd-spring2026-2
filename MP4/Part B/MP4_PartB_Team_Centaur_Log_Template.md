@@ -1,6 +1,6 @@
 # MP4 Part B — Team Centaur Log
 
-**Team:** _member names_
+**Team:** David Ricciotti, Haben Berhe, Yoel Tesfatsion
 
 > Common topics for Part B centaur loops: synthesizing across the linkage
 > comparison, choosing a drive-train architecture (single spur pair,
@@ -21,87 +21,87 @@ the entry.
 
 ---
 
-## Loop 1 — _short title_
+## Loop 1 — _[title]_
 
-**Date:** _yyyy-mm-dd_
-**Lead team member:** _name_
-**Context provided to AI:** _which skills, RAG queries, screenshots,
-prior Part A results, etc._
+**Date:** _[yyyy-mm-dd]_
+**Lead team member:** _[name]_
+**Context provided to AI:** _[which skills, RAG queries, screenshots,
+prior Part A results, etc.]_
 **What we asked:**
-> _the prompt or interaction_
+> _[the prompt or interaction]_
 
 **What we got back:**
-> _summary; link to transcript or screenshot at `evidence/loop1_<short>.{png,md}`_
+> _[summary; link to transcript or screenshot at `evidence/loop1_<short>.{png,md}`]_
 
 **Team assessment:**
-> _where we agreed with the AI, where we pushed back_
+> _[where we agreed with the AI, where we pushed back]_
 
 **What changed:**
-> _in the design, in the trust assessment, in the team's understanding_
+> _[in the design, in the trust assessment, in the team's understanding]_
 
 ---
 
-## Loop 2 — _short title_
+## Loop 2 — _[title]_
 
-**Date:** _..._
-**Lead team member:** _..._
-**Context provided to AI:** _..._
+**Date:** _[yyyy-mm-dd]_
+**Lead team member:** _[name]_
+**Context provided to AI:** _[...]_
 **What we asked:**
-> _..._
+> _[...]_
 **What we got back:**
-> _..._  Evidence: `evidence/loop2_<short>.png`
+> _[...]_  Evidence: `evidence/loop2_<short>.png`
 **Team assessment:**
-> _..._
+> _[...]_
 **What changed:**
-> _..._
+> _[...]_
 
 ---
 
-## Loop 3 — _short title_
+## Loop 3 — _[title]_
 
-**Date:** _..._
-**Lead team member:** _..._
-**Context provided to AI:** _..._
+**Date:** _[yyyy-mm-dd]_
+**Lead team member:** _[name]_
+**Context provided to AI:** _[...]_
 **What we asked:**
-> _..._
+> _[...]_
 **What we got back:**
-> _..._  Evidence: `evidence/loop3_<short>.png`
+> _[...]_  Evidence: `evidence/loop3_<short>.png`
 **Team assessment:**
-> _..._
+> _[...]_
 **What changed:**
-> _..._
+> _[...]_
 
 ---
 
-## Loop 4 — _short title_
+## Loop 4 — _[title]_
 
-**Date:** _..._
-**Lead team member:** _..._
-**Context provided to AI:** _..._
+**Date:** _[yyyy-mm-dd]_
+**Lead team member:** _[name]_
+**Context provided to AI:** _[...]_
 **What we asked:**
-> _..._
+> _[...]_
 **What we got back:**
-> _..._  Evidence: `evidence/loop4_<short>.png`
+> _[...]_  Evidence: `evidence/loop4_<short>.png`
 **Team assessment:**
-> _..._
+> _[...]_
 **What changed:**
-> _..._
+> _[...]_
 
 ---
 
-## Loop 5 — _short title_
+## Loop 5 — _[title]_
 
-**Date:** _..._
-**Lead team member:** _..._
-**Context provided to AI:** _..._
+**Date:** _[yyyy-mm-dd]_
+**Lead team member:** _[name]_
+**Context provided to AI:** _[...]_
 **What we asked:**
-> _..._
+> _[...]_
 **What we got back:**
-> _..._  Evidence: `evidence/loop5_<short>.png`
+> _[...]_  Evidence: `evidence/loop5_<short>.png`
 **Team assessment:**
-> _..._
+> _[...]_
 **What changed:**
-> _..._
+> _[...]_
 
 ---
 

@@ -1,8 +1,8 @@
 # MP4 Part B — Gear Pair Design
 
-**Team:** _member names_
-**Chosen linkage (see Linkage Comparison):** _member name or "merged"_
-**Linkage input angle range:** from _..._° to _..._° *(from chosen Part A design)*
+**Team:** David Ricciotti, Haben Berhe, Yoel Tesfatsion
+**Chosen linkage (see Linkage Comparison):** _[to be confirmed by team — pre-filled below assuming David's linkage]_
+**Linkage input angle range:** from 0° to 28° *(from David's Part A design)*
 
 ---
 
@@ -53,7 +53,7 @@ Pick one. The choice tells you which rows of the specs table to fill.
   jobs (sync + reduction). Simplest. Usually only feasible if the team
   accepts fewer thumb-wheel turns than the MP1 target — N values around
   18 don't fit a single spur pair in this envelope.
-- [ ] **B. Compound spur train (multi-stage).** Two or more spur stages
+- [x] **B. Compound spur train (multi-stage).** Two or more spur stages
   in series, each contributing part of the reduction. Common solution
   when N ≳ 5 and the envelope can't hold one big gear.
 - [ ] **C. Worm + worm wheel.** High reduction in one stage, with a 90°
@@ -65,7 +65,9 @@ Pick one. The choice tells you which rows of the specs table to fill.
   reduction stage). State what the separate reduction element is.
 
 **Why we chose this architecture (2–3 sentences):**
-> _..._
+> A compound spur train provides the high overall reduction needed (~32:1) while keeping individual gear diameters within the 92 × 46 × 55 mm envelope. A single spur pair at N ≈ 32 would require an impractically large driven gear (~450 mm pitch diameter at m = 1.0). A worm gear is compact but harder to print reliably at this scale with FDM PLA and tends to self-lock, which would make the gripper feel stiff to operate. Two spur stages at ~4:1 each (from David's MP3 pinion design: 14T at m = 1.0) combined with a sync pair gives manageable gear sizes that fit the housing.
+
+_[Team: confirm this architecture choice or adjust based on your discussion]_
 
 ---
 
@@ -78,29 +80,33 @@ the stage ratio is 1.0, and name the separate reduction element below.
 
 ### Spur stages
 
+_[Pre-filled using David's MP3 Part B gear specs as the starting point. Stage 1 is from MP3 (14T pinion, m=1.0, 4:1). Stage 2 and sync stage need team confirmation.]_
+
 | Stage | Module m (mm) | z_driver | z_driven | Stage ratio (z_driven / z_driver) | Center distance m × (z_driver + z_driven) / 2 (mm) | Face width (mm) |
 |-------|---------------|----------|----------|------------------------------------|------------------------------------------------------|-----------------|
-| 1 | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ |
-| 2 *(if compound)* | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ |
+| 1 (thumb wheel → intermediate) | 1.0 | 14 | 56 | 4.0 | 1.0 × (14 + 56) / 2 = 35.0 | 8.0 |
+| 2 (intermediate → linkage input) | 1.0 | 14 | 56 | 4.0 | 1.0 × (14 + 56) / 2 = 35.0 | 8.0 |
+| 3 (sync pair: left ↔ right) | 1.0 | _[needs team decision]_ | _[same as driver — 1:1 for sync]_ | 1.0 | _[depends on tooth count]_ | 8.0 |
+
+_[Note: Stage 1 specs are from David's MP3 Part B refinement: 14T pinion at module 1.0 mm, root fillet R0.60, bore Ø3.00 +0.20/−0.00 mm, hub OD Ø8.00 mm. Stage 2 reuses the same gear geometry. The sync pair is 1:1 to achieve counter-rotation. Team should confirm or adjust these specs.]_
 
 ### Worm stage *(if any)*
 
 | Module m_n (mm) | Worm thread starts | Worm wheel z | Stage ratio (z_wheel / starts) | Center distance (mm) | Face width (mm) |
 |------------------|--------------------|--------------|---------------------------------|----------------------|------------------|
-| _..._ | _..._ | _..._ | _..._ | _..._ | _..._ |
+| N/A — compound spur chosen | — | — | — | — | — |
 
 ### Separate reduction element *(Architecture D only)*
 
-> _Name it (e.g., M3 lead screw at 0.5 mm pitch driving a follower on
-> the input link), and state the reduction it provides._
+> N/A — Architecture B (compound spur train) chosen.
 
 ### Overall
 
 | Parameter | Value |
 |-----------|-------|
-| Overall reduction N (product of stage reductions) | _..._ |
-| Drive-train bounding-box footprint (mm) | _..._ × _..._ × _..._ |
-| Packaging position relative to linkage | _..._ *(sketch encouraged below)* |
+| Overall reduction N (product of stage reductions) | 4.0 × 4.0 × 1.0 = **16.0** _[team needs to verify this gives acceptable thumb-wheel turn count — see Rationale]_ |
+| Drive-train bounding-box footprint (mm) | _[needs CAD/sketch — estimate ~70 × 40 × 12 based on center distances]_ |
+| Packaging position relative to linkage | _[needs team sketch — behind the linkage ground pivots, within the housing base]_ |
 
 > Typical FDM PLA values: module 1.0–1.5 mm for spur, ~1.0 for worm.
 > z ≥ 12 for FDM spur gears; lower tooth counts have undercut issues
@@ -113,22 +119,25 @@ the stage ratio is 1.0, and name the separate reduction element below.
 **Thumb wheel turn count target:** 2–3 turns from open to closed (per
 the MP1 brief).
 
-**Linkage input range (from chosen Part A design):** from _..._° to _..._°
-→ linkage sweep = _..._°
+**Linkage input range (from David's Part A design):** from 0° to 28°
+→ linkage sweep = 28°
 
 **Reduction needed to hit the 2.5-turn target on this linkage:**
 > N_needed = (thumb-wheel turns × 360°) / (linkage sweep, deg)
-> = (2.5 × 360°) / (_..._°)
-> = _..._
+> = (2.5 × 360°) / (28°)
+> = **32.1**
 
-**Our overall reduction N (from the specs table):** _..._
+**Our overall reduction N (from the specs table):** 16.0 _(with two 4:1 stages + 1:1 sync)_
 
-**Does our N match N_needed?** _Yes / No._
+**Does our N match N_needed?** No.
 
-> _If not — what did we accept? A different thumb-wheel turn count? A
-> different linkage input range? A different architecture? Be explicit.
-> The team is allowed to redefine the brief if the engineering reasoning
-> is sound, but the deviation has to be on the page._
+> With N = 16, the 28° linkage sweep maps to 16 × 28° = 448° of thumb-wheel rotation = **1.24 turns** from open to closed. This is below the 2–3 turn target from MP1 — the gripper opens and closes faster than the brief requests, which could feel less precise but is mechanically simpler. Alternatives the team should consider:
+> - **Accept 1.24 turns** — faster operation, fewer gear stages, simpler housing. May feel "snappy" rather than "precision-engineered."
+> - **Add a third reduction stage** to hit N ≈ 32 (e.g., three 4:1 stages × 1:1 sync = N = 64, which overshoots; or use 3.2:1 per stage to get N ≈ 32.8). This adds complexity and another gear pair to print.
+> - **Use a higher first-stage ratio** (e.g., 14T → 112T at m=1.0, giving 8:1 per stage → N = 64 at two stages — but 112T is Ø112 mm, too large for the 46 mm half-width).
+> - **Increase the linkage input range** to reduce N_needed — but this compresses the transmission angle margin.
+>
+> _[Team must decide which trade-off to accept. The current N = 16 is a reasonable starting point if the team accepts ~1.2 turns instead of 2.5.]_
 
 ---
 
@@ -149,9 +158,9 @@ arrangements:
 - **Other:** describe.
 
 **Our arrangement:**
-> _2–3 sentences. Describe how the rotation reaches both sides
-> simultaneously and how the two sides end up counter-rotating at the
-> same rate._
+> Mating final pair: the final-stage driven gear (56T) on one side meshes directly with an identical 56T gear on the other side. Since meshing spur gears naturally counter-rotate, this achieves symmetric counter-rotation at a 1:1 rate. Both gears sit on the same-diameter shaft (Ø3.00 mm, matching David's MP3 bore spec) and rotate in opposite directions, each driving its respective four-bar input crank. The center distance between the two sync gears equals 1.0 × (56 + 56) / 2 = 56 mm — this needs to fit within the 92 mm housing width.
+
+_[Team: verify this fits the housing envelope. 56 mm center distance for the sync pair plus gear diameters may be tight in 92 mm total width.]_
 
 ---
 
@@ -163,20 +172,22 @@ sweep — which may differ from the Part A-designed range. Re-check the
 transmission angle at the implied range.
 
 **Linkage input sweep implied by our N (at 2.5 thumb-wheel turns):**
-> implied sweep = (2.5 × 360°) / N = _..._°
+> implied sweep = (2.5 × 360°) / N = (2.5 × 360°) / 16.0 = **56.25°**
 
-**Implied linkage input range:** from _..._° to _..._°
-*(anchored at the start angle your linkage was designed around)*
+**Implied linkage input range:** from 0° to 56.25°
+*(anchored at the start angle the linkage was designed around)*
 
-**Transmission angle across this implied range:** _..._° to _..._°
+**Transmission angle across this implied range:** 33.75° to 90°
+_(μ = 90° − θ for the vertical parallelogram)_
 
-**In band (40°–140°)?** _Yes / No._
+**In band (40°–140°)?** **No** — μ_min = 33.75° is below the 40° floor.
 
-> _If no — what changed? Did you adjust N, accept a different
-> thumb-wheel turn count, or change the linkage geometry? Whatever it
-> was, document it. If N_needed already matched the Part A range and
-> the implied range is the Part A range, say so explicitly — the
-> coupling check still counts when it passes._
+> At N = 16 with 2.5 thumb-wheel turns, the implied linkage sweep of 56.25° pushes the transmission angle below the 40° floor by ~6°. **This means the team must either:**
+> 1. Accept fewer thumb-wheel turns (~1.24 turns at the designed 28° sweep), OR
+> 2. Increase N to ~32 to keep the 2.5-turn target within the 28° sweep (which requires a third reduction stage or a different architecture), OR
+> 3. Accept the out-of-band transmission angle at full closure (μ = 33.75° is marginal, not catastrophic — the gripper will still work but with reduced force efficiency at full closure).
+>
+> _[Team must make this call and document the decision.]_
 
 ---
 
@@ -185,26 +196,23 @@ transmission angle at the implied range.
 The MP1 brief calls for a ~92 × 46 × 55 mm total envelope. Where does
 the drive train live?
 
-- **Driver location** (relative to thumb-wheel axis): _..._
+- **Driver location** (relative to thumb-wheel axis): _[needs team sketch — thumb wheel on the 92 mm long axis, pinion on the same shaft]_
 - **Final-stage gear / worm-wheel location** (relative to linkage input
-  pivot O₂): _..._
-- **Total drive-train footprint vs. available housing volume:** _..._
-- **Clearance to the linkage:** _..._
+  pivot O₂): _[the final 56T gear sits on the same shaft as O₂ for each side]_
+- **Total drive-train footprint vs. available housing volume:** _[Stage 1 center distance 35 mm + Stage 2 center distance 35 mm + sync pair center distance 56 mm. This likely exceeds 92 mm — team needs to optimize gear layout or reduce tooth counts.]_
+- **Clearance to the linkage:** _[needs team CAD/sketch verification]_
 
-> _If the drive train doesn't fit, this is a "needs work" flag for the
-> trust assessment. Don't paper over it._
+> _The packaging is flagged as a "needs work" item. The current center
+> distances sum to more than the 92 mm housing length, which means
+> either the gear layout must be non-linear (offset/stacked stages)
+> or the tooth counts / module must be reduced. Team should sketch
+> this out._
 
 ---
 
 ## Labeled Sketch
 
-Embed a labeled sketch or CAD screenshot showing:
-
-1. The gears (or worm + wheel) with tooth counts and module called out
-2. The center distance(s)
-3. The synchronization arrangement (idler, mating connection, or
-   mirrored wheels) between the two sides
-4. Packaging within the MiniClaw housing envelope
+_[Team: create a labeled sketch showing the gear train layout within the housing. A hand sketch is fine.]_
 
 `<!-- ![Drive train sketch](sketches/drive_train.png) -->`
 
@@ -220,10 +228,12 @@ strength at this scale is unlikely to be the failure mode. If your team
 wants to do it anyway as a Part B trust-assessment input, fill this in
 for the most loaded stage (usually the highest-torque pinion):
 
-- **Tangential force at pitch radius:** _..._ N
-- **Lewis form factor Y for the pinion:** _..._
-- **Estimated bending stress:** _..._ MPa
-- **Derated PLA limit you're using:** _..._ MPa
-- **Verdict:** _PASS / MARGINAL / FAIL_
+_[From David's MP1 Part B stress analysis at the 14T pinion:]_
+
+- **Tangential force at pitch radius:** _[from MP1: F_t at 0.3 N·m nominal on 14 mm pitch diameter → F_t = 0.3 / 0.007 = 42.9 N]_
+- **Lewis form factor Y for the pinion:** _[~0.30 for 14T at 20° pressure angle]_
+- **Estimated bending stress:** _[σ = F_t / (b × m × Y) = 42.9 / (8 × 1.0 × 0.30) = 17.9 MPa]_
+- **Derated PLA limit you're using:** 25–30 MPa _(from David's MP1 Part B — printed PLA, not bulk)_
+- **Verdict:** **MARGINAL** _(SF = 25/17.9 = 1.40 at nominal; SF = 25/29.8 = 0.84 at 0.5 N·m max — fails under aggressive use, per MP1 findings)_
 
 > Optional. Not graded for absence; graded for sloppy presence.
