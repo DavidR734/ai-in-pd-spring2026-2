@@ -65,7 +65,7 @@ Pick one. The choice tells you which rows of the specs table to fill.
   reduction stage). State what the separate reduction element is.
 
 **Why we chose this architecture (2–3 sentences):**
-> A single spur pair is the simplest architecture and sufficient for our design. With Haben's linkage providing a 100° input sweep, the 1:1 gear pair maps the thumb wheel directly to linkage input (N = 1), giving 0.28 thumb-wheel turns from open to closed. While this is fewer turns than the 2–3 turn MP1 target, the team accepts this trade-off because it eliminates multi-stage gear complexity, reduces part count, keeps the drive train compact within the 92 mm envelope, and avoids the packaging challenges that plagued the compound train design (center distances exceeding housing length).
+> A single spur pair is the simplest architecture and sufficient for our design. With Haben's linkage providing a 100° input sweep, the 1:1 gear pair maps the thumb wheel directly to linkage input (N = 1), giving 0.28 thumb-wheel turns from open to closed. While this is fewer turns than the 2–3 turn MP1 target (and below the 6:1–8:1 ratio recommended for hand-driven grippers per Haben's MP3 RAG query of ACME standards), the team accepts this trade-off because it eliminates multi-stage gear complexity, reduces part count, keeps the drive train compact within the 92 mm envelope, and avoids the packaging challenges that plagued the compound train design (center distances exceeding housing length). The BigClaw uses a 4.5:1 ratio (54T/12T), which ACME's own data notes is "insufficient for comfortable hand operation" — but with Haben's wider 100° sweep (vs. BigClaw's servo-driven range), the direct 1:1 drive still gives adequate rotational travel for manual control.
 
 ---
 
@@ -82,7 +82,7 @@ the stage ratio is 1.0, and name the separate reduction element below.
 |-------|---------------|----------|----------|------------------------------------|------------------------------------------------------|-----------------|
 | 1 (Side 1 ↔ Side 2, sync + drive) | 1.0 | 20 | 20 | 1.0 | 1.0 × (20 + 20) / 2 = 20.0 | 8.0 |
 
-Gear specs: module m = 1.0 mm, z = 20 teeth each, pitch diameter = 20 mm, addendum circle = 22 mm. Bore Ø3.40 mm (increased from David's MP3 spec of Ø3.20 to provide 0.40 mm diametral clearance on Ø3.0 pins, guaranteeing sliding fit after FDM tolerance). Hub OD Ø8.0 mm. Face width 8.0 mm.
+Gear specs: module m = 1.0 mm, z = 20 teeth each, pitch diameter = 20 mm, addendum circle = 22 mm. Bore Ø3.40 mm (increased from David's MP3 spec of Ø3.20 to provide 0.40 mm diametral clearance on Ø3.0 pins, guaranteeing sliding fit after FDM tolerance). Hub OD Ø8.0 mm. Face width 8.0 mm (exceeds the 3× module minimum of 3 mm recommended by ACME standards per Haben's MP3 RAG query; ACME recommends 4–6 mm production range at m = 1.0, and our 8 mm provides additional margin for printed PLA durability).
 
 ### Worm stage *(if any)*
 
@@ -208,6 +208,6 @@ for the most loaded stage (usually the highest-torque pinion):
 - **Lewis form factor Y for z = 20:** ~0.32
 - **Estimated bending stress:** σ = F_t / (b × m × Y) = 30 / (8 × 1.0 × 0.32) = **11.7 MPa**
 - **Derated PLA limit you're using:** 25–30 MPa (printed PLA, per David's MP1)
-- **Verdict:** **PASS** (SF = 25/11.7 = **2.14** at nominal torque; SF = 25/19.5 = 1.28 at 0.5 N·m max hand torque — marginal but passing)
+- **Verdict:** **PASS** (SF = 25/11.7 = **2.14** at nominal torque; SF = 25/19.5 = 1.28 at 0.5 N·m max hand torque — marginal but passing). ACME standards recommend SF ≥ 2.0 for printed gears to account for interlayer weakness and material variation (per Haben's MP3 RAG query). Our nominal SF of 2.14 meets this threshold; the max hand torque SF of 1.28 is below the ACME recommendation, but max hand torque is an overload condition, not the design point.
 
 > The 20T gear at m = 1.0 has a higher Lewis form factor (0.32 vs. 0.30 for 14T) and a larger pitch radius (10 mm vs. 7 mm), both of which reduce bending stress compared to the original 14T pinion design. This is a meaningful improvement from switching to Architecture A.

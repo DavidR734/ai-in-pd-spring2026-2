@@ -74,7 +74,7 @@ Updated with team decision to increase bore diameter.
 - **Expected clearance after print** (typical FDM: holes print ~0.10 mm
   undersize, pins ~0.10 mm oversize; net effect ≈ −0.20 mm on the
   designed clearance): 0.40 − 0.20 = **0.20 mm** (good sliding fit)
-- **Fit class:** Sliding fit — adequate clearance for rotation without excessive wobble
+- **Fit class:** Sliding fit — adequate clearance for rotation without excessive wobble. Note: ACME-MFG-004 specifies 0.10–0.15 mm interference for structural press fits and 0.05–0.08 mm for alignment fits (per Haben's MP3 Part B RAG query). Our 0.20 mm post-print clearance is intentionally a sliding fit, not a press fit — the pins need to rotate freely in the bores.
 - **Accept?** **Yes** — 0.20 mm post-print clearance provides a reliable sliding fit for printed PLA. No reaming required.
 
 > Same pin geometry applies to all 8 linkage pivots (4 per side) and

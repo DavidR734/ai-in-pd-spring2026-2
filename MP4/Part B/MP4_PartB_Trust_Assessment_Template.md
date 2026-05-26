@@ -64,9 +64,9 @@ every part of the gripper must show up somewhere with a flag.
 
 **Status:** Unknown
 
-**What's verified:** The finger tip extension (9 mm past joint B along the coupler direction, per Haben's Part A design) is defined, but the physical jaw arm shape, cross-section, and attachment method are not designed.
-**What's not verified:** Jaw arm geometry, cross-section for 5–8 N grip force, attachment to the coupler link, contact surface for gripping, PLA stiffness under load.
-**Risk if we print as-is:** Cannot print — no jaw arm design exists. Team needs to create jaw arm geometry in CAD.
+**What's verified:** The finger tip extension (9 mm past joint B along the coupler direction, per Haben's Part A design) is defined, but the physical jaw arm shape, cross-section, and attachment method are not designed. BigClaw reference dimensions are available from Haben's MP3 RAG query: BigClaw uses a 45 mm output link (jaw arm) with 28 mm coupler and 32 mm crank arm, achieving 0–86 mm jaw range.
+**What's not verified:** Jaw arm geometry, cross-section for 5–8 N grip force, attachment to the coupler link, contact surface for gripping, PLA stiffness under load. Per Haben's MP3 BigClaw teardown: jaw alignment is critical — even 0.5 mm misalignment between left and right jaws causes uneven gripping (top customer complaint in GripperBot v1). Silicone grip pads improved grip force by ~40% without increasing mechanism force. Haben's MP3 CAD review also showed that fillets at jaw arm bends are important for reducing stress concentration in PLA.
+**Risk if we print as-is:** Cannot print — no jaw arm design exists. Team needs to create jaw arm geometry in CAD, paying attention to alignment tolerances and stress concentration at bends (per Haben's MP3 lessons).
 
 ---
 
