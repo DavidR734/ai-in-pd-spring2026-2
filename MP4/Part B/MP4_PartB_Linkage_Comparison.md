@@ -1,6 +1,6 @@
 # MP4 Part B — Linkage Comparison Worksheet
 
-**Team:** _member names_
+**Team:** David Ricciotti, Haben Berhe, Yoel Tesfatsion
 
 This is your day-one integration artifact. Each member arrives with a
 four-bar linkage from Part A — same one-side problem, same BigClaw
@@ -21,10 +21,9 @@ Section 1 design summary and Section 7 trust ledger.
 
 | Member | L1 / L2 / L3 / L4 (mm) | Output pivot offset (mm) | Single-side displacement (mm) | Implied total jaw opening (2× displacement, mm) | Min / max transmission angle | Part A trust ledger highlight |
 |--------|-------------------------|---------------------------|-------------------------------|-------------------------------------------------|------------------------------|--------------------------------|
-| _..._  | _..._ / _..._ / _..._ / _..._ | ( _..._ , _..._ ) | _..._ | _..._ | _..._° / _..._° | _e.g., "in band the whole time" or "borderline at θ_min"_ |
-| _..._  |                         |                           |                               |                                                 |                              |                                |
-| _..._  |                         |                           |                               |                                                 |                              |                                |
-| _..._  |                         |                           |                               |                                                 |                              |                                |
+| David Ricciotti | 12 / 26 / 12 / 26 | (0, 12) | 12.5 | 25.0 | 62° / 90° | In band the whole time (22° margin above 40° floor). Symmetry assumption and gear-ratio-to-input-range mapping flagged as unverified. PLA pin wear at pivot joints (100+ cycle question from MP1). |
+| Haben Berhe | _[needs Haben's Part A data]_ | _[needs data]_ | _[needs data]_ | _[needs data]_ | _[needs data]_ | _[needs Haben's trust ledger highlight]_ |
+| Yoel Tesfatsion | _[needs Yoel's Part A data]_ | _[needs data]_ | _[needs data]_ | _[needs data]_ | _[needs data]_ | _[needs Yoel's trust ledger highlight]_ |
 
 ---
 
@@ -35,18 +34,39 @@ the same axes:
 
 1. **Single-side finger displacement vs. input angle** — all candidates
    on one chart, with a horizontal reference line at the displacement
-   that produces the target 40 mm total jaw opening (i.e., 20 mm
-   single-side).
+   that produces the target total jaw opening.
 2. **Transmission angle vs. input angle** — all candidates on one chart,
    with the 40°–140° workable band shaded.
 
-`<!-- ![Displacement comparison](plots/displacement_comparison.png) -->`
-
-`<!-- ![Transmission angle comparison](plots/mu_comparison.png) -->`
+_[Plots to be generated once all three members' Part A data is available. Use the Python script below to combine.]_
 
 > A short Python script that reads each member's geometry and replots is
 > the typical way to do this. The matplotlib animation starter from Part
 > A has the kinematics — adapt it.
+
+```python
+# Template script — fill in each member's parameters once available
+import numpy as np
+import matplotlib.pyplot as plt
+
+# David's design
+david = {'L1': 12, 'L2': 26, 'L3': 12, 'L4': 26,
+         'O4': (0, 12), 'tip_ext': 22, 'theta_range': (0, 28),
+         'label': 'David'}
+
+# Haben's design — fill from Part A
+# haben = {'L1': ?, 'L2': ?, 'L3': ?, 'L4': ?,
+#          'O4': (?, ?), 'tip_ext': ?, 'theta_range': (?, ?),
+#          'label': 'Haben'}
+
+# Yoel's design — fill from Part A
+# yoel = {'L1': ?, 'L2': ?, 'L3': ?, 'L4': ?,
+#         'O4': (?, ?), 'tip_ext': ?, 'theta_range': (?, ?),
+#         'label': 'Yoel'}
+
+# Use compute_finger_position() and compute_transmission_angle()
+# from Part A to sweep each design and overlay on shared axes.
+```
 
 ---
 
@@ -54,33 +74,31 @@ the same axes:
 
 For each candidate, 2–3 sentence assessment:
 
-- **Linkage [member name]:** _What's good about it. What's questionable.
-  What's unverified._
-- **Linkage [member name]:** _..._
-- **Linkage [member name]:** _..._
-- **Linkage [member name]:** _..._
+- **Linkage David Ricciotti:** Parallelogram (L1=L3=12, L2=L4=26) with vertical ground link gives pure translational jaw motion and a generous 22° margin above the 40° transmission angle floor. Envelope fit is comfortable (26 mm horizontal, 46.2 mm vertical vs. 46 × 55 mm budget). Unverified: symmetry under the mirrored gear pair, PLA link deflection under 5–8 N grip load.
+- **Linkage Haben Berhe:** _[needs Haben's Part A data and assessment]_
+- **Linkage Yoel Tesfatsion:** _[needs Yoel's Part A data and assessment]_
 
 ---
 
 ## The Team's Selection
 
-**Chosen linkage:** _one member's, or a merged design — name it_
+_[Requires team discussion after comparing all three linkages]_
+
+**Chosen linkage:** _[to be decided by team]_
 
 **Why this one (2–4 sentences of engineering reasoning):**
 
-> _Be specific. "Better transmission angles across the range" or
-> "tightest envelope fit" — not "best overall." If you merged, name the
-> base and what got carried over._
+> _[to be filled after team comparison of displacement curves, transmission angle margins, and envelope fits]_
 
 **What got carried over from the others (if anything):**
 
-- _..._
-- _..._
+- _[to be filled by team]_
+- _[to be filled by team]_
 
 **What got cut and why (be explicit):**
 
-- _..._
-- _..._
+- _[to be filled by team]_
+- _[to be filled by team]_
 
 ---
 
@@ -88,11 +106,13 @@ For each candidate, 2–3 sentence assessment:
 
 Carry these forward into `MP4_PartB_Gear_Pair_Design.md`:
 
-- **Chosen linkage's input angle range:** from _..._° to _..._°
-- **Chosen linkage's transmission angle band across that range:** _..._° to _..._°
+_[Values below assume David's linkage is selected — update if the team picks a different linkage]_
+
+- **Chosen linkage's input angle range:** from 0° to 28°
+- **Chosen linkage's transmission angle band across that range:** 62° to 90°
 - **Implied input angle range tolerance** — how much can the
   drive-train reduction N shift this range before the transmission
-  angle leaves the workable band? _..._°
+  angle leaves the workable band? 22° _(μ_min = 62° at θ = 28°; the 40° floor is hit at θ = 50°, so the range could expand by up to 22° before leaving the band)_
 
 > This last number is the coupling between Layer 1 (drive train) and
 > Layer 2 (linkage). The drive-train design has to respect it.
