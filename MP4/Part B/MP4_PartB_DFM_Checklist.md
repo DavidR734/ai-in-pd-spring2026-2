@@ -25,18 +25,18 @@ queue review, and to document who looked at what.
 For each major part, name the orientation, why, and whether supports
 are needed.
 
-_[Pre-filled with David's linkage and gear data. Team: update once housing and jaw arm designs exist.]_
+Updated with Haben's linkage (L1=47, L2=20, L3=29, L4=23) and Architecture A (single spur pair, 20T × 20T at m=1.0).
 
 | Part | Orientation | Why | Supports? |
 |------|-------------|-----|-----------|
-| Linkage links (ground, input, coupler, output — 26 mm cranks, 12 mm ground/coupler) | Flat on bed | Layer lines perpendicular to pin bore axis → strongest in shear at the pivot joints; 26 mm length fits any bed | No |
-| Gear 1 (14T pinion, m=1.0) | Flat on bed, tooth profile facing up | Tooth profile fidelity — FDM prints involute curves best in the XY plane, with layers stacking along the face width axis | No |
-| Gear 2 (56T driven, m=1.0) | Flat on bed | Same reason; 56 mm OD fits standard print bed | No |
-| Jaw arm | _[needs jaw arm design — likely flat for strength along grip axis]_ | _[to be determined by team]_ | _[likely no if symmetric cross-section]_ |
-| Housing (each shell, if split) | _[needs housing design — likely split horizontal, each half flat on bed]_ | _[to be determined by team]_ | _[likely yes for internal features — gear shaft bores, snap-fit clips]_ |
-| Pins (Ø3 mm × ~8–10 mm) | Upright (axis perpendicular to bed) | Layer lines along pin axis = weakest direction for shear; upright orients layers perpendicular to shear plane | No |
+| Linkage links (ground L1=47mm, input L2=20mm, coupler L3=29mm, output L4=23mm) | Flat on bed | Layer lines perpendicular to pin bore axis → strongest in shear at the pivot joints; longest link (47 mm) fits any standard bed | No |
+| Gear (20T, m=1.0, Ø20 pitch / Ø22 addendum) | Flat on bed, tooth profile facing up | Tooth profile fidelity — FDM prints involute curves best in the XY plane, with layers stacking along the face width axis | No |
+| Jaw arm | Flat on bed (long axis along X) | Grip force acts along the arm — layer lines parallel to force direction gives best tensile strength | No (assuming symmetric cross-section) |
+| Housing (each shell, if split clamshell) | Flat on bed, inner face up | Largest flat surface on bed for stability; snap-fit clips print upward for clean geometry | Yes — internal features (gear shaft bores, linkage pivot mounts) likely need support |
+| Pins (Ø3.0 mm × ~8–10 mm) | Upright (axis perpendicular to bed) | Layers perpendicular to shear plane at the joint — strongest orientation for shear loading | No |
+| Thumb wheel (Ø24–30 mm) | Flat on bed | Knurl pattern prints cleanly in XY; shaft bore centered | No |
 
-**AI assist:** _[team: cite which centaur loop captured the most useful DFM insight here]_
+**AI assist:** Centaur Loop 3 (DFM and pin clearance review) captured the key insight that pin clearance needed to increase from 0.20 mm to 0.40 mm diametral to survive FDM tolerance.
 
 ---
 
@@ -46,18 +46,19 @@ Minimum dimensions per part vs. FDM PLA capability. Standard FDM
 nozzle: 0.4 mm; minimum feature: ~1 mm; minimum wall: 1.2 mm
 (2 perimeters); minimum positive feature: ~0.8 mm.
 
-_[Pre-filled with David's known dimensions. Team: update once CAD exists for all parts.]_
+Updated with Haben's linkage dimensions and Architecture A gear specs.
 
 | Part | Thinnest wall (mm) | Smallest feature (mm) | Flagged? |
 |------|---------------------|------------------------|----------|
-| Linkage cranks (26 mm, cross-section TBD) | _[needs CAD — target ≥ 3 mm for strength]_ | Pin bore Ø3.0 | No (bore is printable) |
-| Pinion (14T, m=1.0) | Tooth root width ≈ 1.0 mm (root fillet R0.60 from MP3) | Root fillet R0.60 mm | **Yes** — root fillet is at the FDM minimum; may need m=1.5 if teeth break |
-| Driven gear (56T, m=1.0) | Tooth root width ≈ 1.2 mm | Root fillet ~R0.40 mm | Marginal — root fillet below 0.5 mm is hard to resolve |
-| Hub (OD Ø8.0, bore Ø3.0) | Wall = (8.0 − 3.0)/2 = 2.5 mm | Bore Ø3.0 | No |
-| Housing | _[needs CAD — target ≥ 1.5 mm walls]_ | _[shaft bore Ø3.0, snap-fit clips]_ | _[likely yes for snap-fit clips — PLA is brittle]_ |
+| Linkage ground link (47 mm, cross-section TBD) | Target ≥ 3 mm for strength (longer span than David's 12 mm link) | Pin bore Ø3.40 | No (bore is printable) |
+| Linkage coupler (29 mm) | Target ≥ 3 mm | Pin bore Ø3.40 | No — but longer span means more deflection risk under load |
+| Linkage input/output (20 mm / 23 mm) | Target ≥ 3 mm | Pin bore Ø3.40 | No |
+| Gear (20T, m=1.0) | Tooth root width ≈ 1.1 mm | Root fillet ~R0.50 mm | **Marginal** — root fillet near FDM minimum. Better than the 14T design (wider root at z=20). |
+| Hub (OD Ø8.0, bore Ø3.40) | Wall = (8.0 − 3.40)/2 = 2.3 mm | Bore Ø3.40 | No |
+| Housing | Target ≥ 1.5 mm walls | Shaft bore Ø3.40, snap-fit clips | **Yes** — snap-fit clips in PLA are brittle; recommend ≥ 2.0 mm clip thickness |
 | Pins (Ø3.0 mm) | 3.0 mm diameter | Entire part is the feature | No |
 
-**Notes:** The 14T pinion root fillet (R0.60) and driven gear root fillet are the riskiest features. At m=1.0, tooth roots approach the FDM minimum feature size. If teeth break during testing, the team should consider bumping to m=1.5 (which would increase all gear diameters by 50% and the packaging challenge with them).
+**Notes:** The 20T gear at m = 1.0 has wider tooth roots than the original 14T design, reducing the printability risk at the root fillet. The snap-fit clips on the housing remain the highest-risk feature for PLA brittleness.
 
 ---
 
@@ -65,35 +66,35 @@ _[Pre-filled with David's known dimensions. Team: update once CAD exists for all
 
 For each rotating joint:
 
-_[Pre-filled from David's MP1 and MP3 pin specs.]_
+Updated with team decision to increase bore diameter.
 
 - **Pin OD (CAD nominal):** 3.00 mm
-- **Hole ID (CAD nominal):** 3.20 mm _(Ø3.00 +0.20/−0.00 from MP3)_
-- **Designed clearance:** 0.20 mm diametral (0.10 mm radial)
+- **Hole ID (CAD nominal):** 3.40 mm *(increased from MP3's Ø3.20 to guarantee sliding fit)*
+- **Designed clearance:** 0.40 mm diametral (0.20 mm radial)
 - **Expected clearance after print** (typical FDM: holes print ~0.10 mm
   undersize, pins ~0.10 mm oversize; net effect ≈ −0.20 mm on the
-  designed clearance): 0.20 − 0.20 = **0.00 mm** (borderline)
-- **Fit class:** Borderline sliding / interference
-- **Accept?** **No** — designed clearance should be increased to ≥ 0.30 mm diametral (hole = Ø3.30 or Ø3.40) to guarantee a sliding fit after FDM tolerance. Alternatively, ream the bore post-print with a 3.0 mm drill bit.
+  designed clearance): 0.40 − 0.20 = **0.20 mm** (good sliding fit)
+- **Fit class:** Sliding fit — adequate clearance for rotation without excessive wobble. Note: ACME-MFG-004 specifies 0.10–0.15 mm interference for structural press fits and 0.05–0.08 mm for alignment fits (per Haben's MP3 Part B RAG query). Our 0.20 mm post-print clearance is intentionally a sliding fit, not a press fit — the pins need to rotate freely in the bores.
+- **Accept?** **Yes** — 0.20 mm post-print clearance provides a reliable sliding fit for printed PLA. No reaming required.
 
 > Same pin geometry applies to all 8 linkage pivots (4 per side) and
-> the 3–4 gear shaft bores. _[Team: decide whether to increase bore
-> tolerance or plan for post-processing.]_
+> the 2 gear shaft bores (one per gear, each in a housing mount point).
+> Total rotating joints: 10.
 
 ---
 
 ## 4. Gear Printability
 
-_[Pre-filled from David's MP3 gear specs.]_
+Updated with Architecture A gear specs (20T × 20T at m = 1.0).
 
 | Check | Value | Notes |
 |-------|-------|-------|
 | Module (mm) | 1.0 | At the FDM minimum. Works but leaves no margin for extrusion width variation. m=1.5 is safer if packaging allows. |
-| Smallest tooth feature (root width or fillet) | ~1.0 mm root width; R0.60 fillet | The R0.60 fillet is at the edge of what 0.4 mm nozzle can resolve. |
-| Tooth count (each gear) | 14 / 56 (both stages) | z=14 is above the z≥12 FDM floor. 56T gives Ø56 mm — printable. |
-| Face width (mm) | 8.0 | Adequate — ≥3 mm threshold met with margin. |
+| Smallest tooth feature (root width or fillet) | ~1.1 mm root width; ~R0.50 fillet | Improved over 14T design (wider roots at z = 20). Fillet printable with 0.4 mm nozzle. |
+| Tooth count (each gear) | 20 / 20 (identical pair) | z = 20 is well above the z ≥ 12 FDM floor. Ø22 mm addendum circle — easily printable. |
+| Face width (mm) | 8.0 | Adequate — ≥ 3 mm threshold met with margin. |
 | Print orientation | Flat on bed (tooth profile in XY plane) | Strongly preferred for involute fidelity. |
-| Backlash designed in (mm) | 0.05–0.10 mm (from MP3) | May need to increase to 0.15–0.20 mm for FDM over-extrusion. Test print recommended. |
+| Backlash designed in (mm) | 0.10–0.15 mm | Slightly increased from MP3's 0.05–0.10 mm to account for FDM over-extrusion. Test print recommended. |
 
 ---
 
@@ -102,14 +103,13 @@ _[Pre-filled from David's MP3 gear specs.]_
 Standard FDM PLA: overhangs to 45° usually clean; 60° often acceptable
 with cooling; bridges up to ~10 mm typically fine.
 
-_[Pre-filled for known features. Team: update once housing design exists.]_
-
 | Feature | Angle / span | Concern? | Mitigation |
 |---------|--------------|----------|------------|
 | Gear tooth tips (involute profile) | Near-vertical walls on tooth flanks | Low — tooth height at m=1.0 is ~2.25 mm, well within overhang limits | None needed |
-| Gear hub bore (Ø3.0 × 8.0 mm face width) | Circular bore, printed as bridging layers | Low — Ø3.0 is within bridging capability | Drill/ream post-print if needed |
-| Housing top inner edge | _[needs housing design — likely 45°–60° overhang]_ | _[likely moderate]_ | _[support or chamfer — team decision]_ |
-| Housing snap-fit clips | _[needs housing design]_ | _[high — PLA snap-fits are brittle]_ | _[consider screw fasteners instead]_ |
+| Gear hub bore (Ø3.40 × 8.0 mm face width) | Circular bore, printed as bridging layers | Low — Ø3.40 is within bridging capability | Drill/ream post-print if needed |
+| Housing top inner edge | Likely 45°–60° overhang depending on design | Moderate — large spans may sag | Add chamfer or fillet; use supports if span > 10 mm |
+| Housing snap-fit clips | Cantilever with thin cross-section | **High** — PLA snap-fits are brittle and may crack | Print clips separately and glue, or design clip thickness ≥ 2 mm. Screw fasteners remain a fallback per trust assessment. |
+| Linkage pin bores (Ø3.40 through links) | Circular bore through ≤ 5 mm thick walls | Low | None needed for short bores |
 
 ---
 
@@ -117,23 +117,17 @@ _[Pre-filled for known features. Team: update once housing design exists.]_
 
 Order of operations from raw printed parts to functional gripper.
 
-_[Preliminary sequence — team needs to finalize once all parts are designed.]_
+1. Press pins into linkage links to form the four-bar on each side (4 pins per side, 8 total). Pin OD Ø3.0 into bore Ø3.40 → sliding fit, no tools required.
+2. Install gear onto Side 1's linkage input crank shaft (Ø3.0 pin through Ø3.40 gear bore).
+3. Install gear onto Side 2's linkage input crank shaft, meshing with Side 1's gear at 20 mm center distance.
+4. Mount both linkage assemblies into housing (press gear/linkage shaft pins into housing bore mounts).
+5. Attach jaw arms to coupler links (pin connection).
+6. Close housing (snap-fit second shell over first).
+7. Install thumb wheel onto Side 1's gear shaft (press fit or set screw).
 
-1. Press pins into linkage links to form the four-bar on each side (4 pins per side, 8 total)
-2. Install Stage 1 pinion on thumb-wheel shaft; install Stage 1 driven gear (56T) on intermediate shaft
-3. Install Stage 2 pinion on intermediate shaft; install Stage 2 driven gear (56T) on linkage input shaft
-4. Install sync gear (56T) on opposite-side linkage input shaft, meshing with Stage 2 driven gear
-5. Mount gear train assembly into housing (press shafts into housing bores)
-6. Attach linkage assemblies to input cranks on both sides
-7. Attach jaw arms to coupler links
-8. Close housing (snap-fit or screw second shell)
-9. Install thumb wheel on Stage 1 pinion shaft
+**Accessibility check:** If housing is a clamshell split along the horizontal midplane, all internals (gears, linkage pivots, pins) are accessible before closing the second shell. The single spur pair (only 2 gears at 20 mm center distance) is significantly easier to assemble than the compound train (5 gears across 126 mm).
 
-**Accessibility check:** can each fastener / pin be reached during
-assembly without disassembling the part you just installed? _[Unknown — needs housing design. If housing is a clamshell split, all internals are accessible before closing. If monolithic, gear shafts must slide in from one end.]_
-
-**Snap-fit engagement:** if the design uses snap fits, has the team
-reviewed the deflection geometry against PLA brittleness? _[No — MP1 spec assumes snap-fit housing closure, but PLA snap-fits are known to be brittle. Team should consider M2 or M3 screws as an alternative.]_
+**Snap-fit engagement:** PLA snap-fit clips are brittle. Team decided to keep snap-fit per MP1 spec, but should design clips with ≥ 2 mm thickness and short deflection distances (< 1 mm). Add screw bosses to the housing as a fallback — if clips crack during first assembly, two M2 screws can hold the shells together.
 
 ---
 
@@ -141,23 +135,23 @@ reviewed the deflection geometry against PLA brittleness? _[No — MP1 spec assu
 
 Target from the MP1 brief: **< 15 total parts**.
 
-_[Pre-filled with estimated counts from David's design. Team: adjust once all parts are finalized.]_
+Updated with Architecture A (2 gears instead of 5) and Haben's linkage.
 
 | Part | Count |
 |------|-------|
 | Linkage links (×4 per side × 2 sides) | 8 |
-| Pins (4 per side × 2 sides + gear shafts) | 11 _[8 linkage + 3 gear shafts]_ |
-| Gears (2 stages × 2 gears + 1 sync gear) | 5 |
+| Pins (4 per side × 2 sides + 2 gear shafts) | 10 |
+| Gears (1 per side) | 2 |
 | Jaw arms (1 per side) | 2 |
 | Housing pieces (clamshell: 2) | 2 |
 | Input wheel / knob | 1 |
-| **Total** | **29** |
+| **Total** | **25** |
 
-**Under target?** **No** — significantly over the 15-part target. The main contributors are the 8 linkage links and 11 pins. Possible simplifications for MP5:
-- Integrate link pairs (e.g., print ground link + housing as one piece) to reduce link count
-- Use living hinges instead of separate pins (risky with PLA)
-- Combine the two gear stages into a compound gear (pinion + driven on same shaft = 1 less gear)
-- _[Team: discuss which merges are feasible]_
+**Under target?** **No** — still over the 15-part target, but reduced from 29 (compound train) to 25 by eliminating 3 gears and 1 shaft. The main contributor is the 8 linkage links and 10 pins. Possible simplifications for MP5:
+- Integrate the ground link into the housing shell (eliminates 2 links + 2 pins = −4 parts → 21)
+- Use shaft-in-bore instead of separate pins where possible (eliminate 2–4 pins)
+- Print jaw arms as part of the coupler link (eliminates 2 parts → saves 2 more)
+- Aggressive integration could reach ~17 parts, approaching the target.
 
 ---
 
@@ -166,27 +160,23 @@ _[Pre-filled with estimated counts from David's design. Team: adjust once all pa
 Rough estimate from a slicer (PrusaSlicer, Bambu Studio, Cura) on the
 team's chosen geometry. Don't sweat ±20% accuracy.
 
-_[Rough estimates — no slicer run yet because full CAD does not exist. Team: run actual slicer estimate once CAD is complete.]_
+Estimates based on typical FDM PLA at 0.2 mm layer height, 20% infill.
 
-- **Total print time (hours):** _[estimate 4–8 hours total across all prints, depending on infill and support settings]_
-- **Total material (grams or meters):** _[estimate 50–100 g PLA based on housing volume + linkage + gears]_
-- **Print bed pieces (how many separate prints?):** _[estimate 3–4 prints: (1) all gears + pins, (2) linkage links, (3) housing shell 1, (4) housing shell 2 + jaw arms + thumb wheel]_
-- **Notes:** _[housing is the largest print; gears and linkage links are small and can be batched on one bed]_
-
----
-
-## DFM Pass Bottom Line
-
-_[Draft — requires team review:]_
-
-> We would **not** send this to the print queue tomorrow. The three flags we'd most want to address first: (1) **Pin clearance** — the designed 0.20 mm diametral clearance nets to 0.00 mm after FDM tolerance, meaning pins will likely not fit without post-processing. Increase bore to Ø3.30–3.40 mm. (2) **Gear tooth fidelity at m=1.0** — root fillets (R0.60) are at the FDM resolution floor. A test print of one gear pair before committing to the full build is essential. (3) **Part count (29)** is nearly double the 15-part target. The team needs to identify which parts can be merged before printing.
+- **Total print time (hours):** ~3–6 hours total across all prints (Architecture A is simpler than compound train)
+- **Total material (grams or meters):** ~40–80 g PLA (reduced from compound train estimate due to fewer gears)
+- **Print bed pieces (how many separate prints?):** 3 prints:
+  1. All linkage links + pins (small parts, batch on one bed) — ~1 hour
+  2. Both gears + jaw arms + thumb wheel — ~1 hour
+  3. Housing shell 1 + housing shell 2 — ~2–4 hours (largest print)
+- **Notes:** Housing is the largest print and the most likely to need supports. Gears and linkage links are small enough to batch efficiently. The reduced gear count (2 vs. 5) saves ~1 hour of print time compared to the compound train.
 
 ---
 
-## AI Use During the DFM Pass
+## DFM Summary
 
-Document briefly which centaur loops in
-`MP4_PartB_Team_Centaur_Log_Template.md` produced DFM findings, and
-which AI suggestions the team rejected (and why).
+**Top 3 printability risks (in order):**
+1. **Snap-fit housing clips** — PLA brittleness makes snap-fit clips the most likely point of failure during assembly. Mitigation: design thick clips (≥ 2 mm), add screw boss fallback.
+2. **Gear tooth fidelity at m = 1.0** — root fillets (~R0.50) are near the FDM minimum feature size. A test print of one gear pair is recommended before committing to the full build. The 20T design is less risky than the original 14T design.
+3. **Pin-bore fit consistency across 10 joints** — even with 0.40 mm designed clearance, FDM dimensional variability means some joints may be tighter or looser than others. A test print of one pin-in-bore joint validates the clearance design.
 
-> _[Team: fill in after completing the centaur loops. Reference the specific loop numbers that informed DFM decisions.]_
+**AI assist:** DFM risks identified through Centaur Loops 3 and 4 (this Devin session). Key AI contributions: calculating post-FDM-tolerance clearances, flagging the compound train packaging problem that led to the Architecture A switch, and computing Lewis bending stress for the new 20T gear design.

@@ -8,9 +8,7 @@ continues. Don't redo work in MP5 that this document already captured.
 
 ## Final Design Summary
 
-> _[Requires team finalization — draft below based on David's Part A data and preliminary drive train:]_
->
-> The MiniClaw uses David Ricciotti's parallelogram four-bar linkage (L1=L3=12 mm, L2=L4=26 mm, vertical ground link, O4=(0,12)) with a 0°–28° input range producing 25 mm total jaw opening. The drive train is a compound spur train (Architecture B): two 4:1 spur stages (14T→56T at m=1.0, from David's MP3 pinion refinement) plus a 1:1 mating final pair for counter-rotation synchronization, giving overall reduction N = 16. _[Team: update with final architecture decision, especially if N is adjusted to meet the 2–3 thumb-wheel-turn target.]_
+The MiniClaw uses Haben Berhe's crossed-branch four-bar linkage (L1=47, L2=20, L3=29, L4=23, O4=(47,0)) with a −50° to +50° input range (100° sweep) producing 40.13 mm total jaw opening — meeting the MP1 40 mm target. The drive train is a single spur pair (Architecture A): two identical 20T gears at m=1.0, meshing 1:1 for counter-rotation synchronization. Overall reduction N = 1, giving 0.28 thumb-wheel turns from open to closed. The team accepts this deviation from the MP1 2–3 turn target in exchange for dramatically simpler mechanics (2 gears vs. 5, 20 mm center distance vs. 126 mm). Pin bores increased to Ø3.40 mm for reliable post-FDM sliding fit.
 
 ---
 
@@ -18,11 +16,12 @@ continues. Don't redo work in MP5 that this document already captured.
 
 Pulled directly from the per-subsystem trust assessment.
 
-- Linkage kinematics: transmission angle stays in the 62°–90° band across full 0°–28° input range (22° margin above 40° floor), verified by three independent methods (code, hand calc, centaur loop) agreeing within 0.1 mm.
-- Single-side displacement of 12.5 mm delivers 25 mm total jaw opening, matching the MP1 target.
-- No interference detected across full linkage sweep; mechanism fits within half-envelope budget (26 × 46.2 mm vs. 46 × 55 mm allowed).
-- Stage 1 gear geometry (14T at m=1.0) refined through three MP iterations with stress analysis, tolerance specs, and CAD parameterization.
-- _[Team: add additional items from the trust assessment once completed]_
+- Linkage kinematics: transmission angle stays in the 61.3°–91.3° band across full −50° to +50° input range (21.3° margin above 40° floor), verified by three independent methods (code, hand calc, centaur loop) agreeing within 0.1 mm.
+- Single-side displacement of 20.06 mm delivers 40.13 mm total jaw opening, meeting the MP1 target.
+- No interference detected across full linkage sweep.
+- Drive train packaging: 20 mm center distance fits within 92 mm housing with 72 mm clearance. The packaging problem from the compound train is eliminated.
+- Gear stress: Lewis bending SF = 2.14 at nominal torque (0.3 N·m) for the 20T gear — comfortable margin against 25 MPa printed PLA.
+- Pin clearance: 0.40 mm diametral designed, 0.20 mm post-FDM — reliable sliding fit.
 
 ---
 
@@ -30,20 +29,31 @@ Pulled directly from the per-subsystem trust assessment.
 
 Pulled directly from the per-subsystem trust assessment.
 
-- Drive train packaging: center distances (35 + 35 + 56 mm) exceed the 92 mm housing length in a linear layout. Gear arrangement must be non-linear or tooth counts reduced. No physical sketch or CAD verifies that the gears fit inside the housing.
-- Pin joint clearance: designed 0.20 mm diametral clearance nets to 0.00 mm after FDM tolerance. Pins may not fit without post-processing. Bore tolerance needs to increase to ≥ 0.30 mm.
-- No housing, jaw arm, or thumb wheel CAD exists — these subsystems are flagged as "Unknown" in the trust assessment.
-- Part count (29 estimated) is nearly double the 15-part target from MP1. Merges and simplifications needed.
-- Tooth strength under realistic load: Lewis analysis showed marginal SF at nominal torque and failure at max hand torque with degraded PLA. No bench test.
-- _[Team: add items from Haben's and Yoel's subsystem reviews]_
+- No housing, jaw arm, or thumb wheel CAD exists — these subsystems are flagged as "Unknown" in the trust assessment. They need to be designed in CAD before any prototype build.
+- No physical test prints have been done — pin fit, gear meshing, and PLA dimensional accuracy are all analytically predicted but unverified.
+- Ergonomic unknown: 0.28 thumb-wheel turns (100° of rotation) may feel too fast for precise gripping tasks. Only a physical or dynamic prototype can evaluate this.
+- Part count (25 estimated) exceeds the 15-part target from MP1. Aggressive integration (ground link into housing, jaw arms into coupler) could approach ~17 parts.
+- Snap-fit housing closure is a known brittleness risk with PLA. Screw boss fallback should be designed in.
 
 ---
 
 ## What We're Choosing to Demonstrate in MP5
 
-_[Requires team decision:]_
+**Demo plan:** Dynamic simulation of Haben's four-bar linkage motion, showing the jaw opening and closing through the full −50° to +50° input range. The simulation will show the finger tip trajectory, the displacement curve, and the transmission angle staying within the workable band — all animated on screen.
 
-> _[Suggested: demonstrate the linkage motion with a mirrored two-sided gripper closing on a small object (pencil or marker). The linkage kinematics are the most thoroughly verified subsystem. Whether the demo uses a physical 3D-printed prototype or a dynamic simulation depends on whether the team resolves the housing and gear packaging before the MP5 deadline. Name the specific demo and the closing action that shows "this is the MiniClaw and it works."]_
+**Live MCP tool call:** A live function call to recompute the transmission angle for a perturbed geometry (e.g., "what happens if we change L3 from 29 mm to 32 mm?") — demonstrating the Tools & Integration pillar.
+
+**Fallback:** Pre-recorded video of the simulation running on David's laptop, uploaded to the repo at `MP5/demo/`.
+
+**Punchline:** "This linkage achieves 40 mm jaw opening while staying inside the workable transmission angle band. The single spur pair syncs both sides with just two gears. Here's the simulation proving it works."
+
+---
+
+## The Wrong-AI Moment
+
+The AI (Devin) initially designed David's Part A linkage with a 40 mm jaw opening target and 0°–46° input range, producing parameters that looked correct (L1=L3=12, L2=L4=26, 20.3 mm single-side displacement). But when David provided his MP1 and MP3 context documents, the real target turned out to be 25 mm jaw opening with a 0°–28° input range — the AI had been confidently designing to the wrong specification because it lacked the project context. The error was caught because David compared the AI's output against his own prior work. The fix required updating all sections, evidence files, and motion artifacts.
+
+This directly illustrates the Centaur Engineering and Context Management pillars: the AI does the math correctly but needs the human to supply and validate the right inputs. Without the MP1/MP3 context, the AI produced a technically sound but factually wrong design.
 
 ---
 
@@ -52,20 +62,19 @@ _[Requires team decision:]_
 Be honest. The product team review next week is more interesting if the
 team names what it doesn't yet know.
 
-- Will the m=1.0 gear teeth (root fillet R0.60) print with sufficient fidelity on FDM PLA to mesh smoothly under load?
-- Can the drive train (center distances totaling 126 mm) be physically arranged within the 92 × 46 × 55 mm housing?
-- _[Team: add at least one more open question from the integration work]_
+- Will the 0.28-turn thumb wheel operation feel ergonomically acceptable, or does the gripper need a detent or friction brake to prevent accidental opening?
+- Can the 47 mm ground link fit within the housing envelope alongside the jaw arm sweep path and the 20 mm gear center distance?
+- Will the snap-fit PLA housing clips survive repeated assembly/disassembly, or should we design screw bosses from the start?
 
 ---
 
 ## Team Composition for MP5
 
-Same team. Confirm member names and any role notes (who's leading the
-narrative, who's running the demo, who's handling slides):
+Same team. Confirmed member roles:
 
-- David Ricciotti — _[role TBD by team]_
-- Haben Berhe — _[role TBD by team]_
-- Yoel Tesfatsion — _[role TBD by team]_
+- David Ricciotti — leads the narrative / presentation
+- Haben Berhe — handles the slides
+- Yoel Tesfatsion — runs the demo
 
 ---
 
@@ -74,10 +83,12 @@ narrative, who's running the demo, who's handling slides):
 For the MP5 portfolio narrative — link, don't copy:
 
 - Linkage Comparison Worksheet: `MP4/Part B/MP4_PartB_Linkage_Comparison.md`
+- Comparison Plots: `MP4/Part B/plots/displacement_comparison.png`, `MP4/Part B/plots/mu_comparison.png`
 - Drive-Train Design Worksheet: `MP4/Part B/MP4_PartB_Gear_Pair_Design.md`
-- Per-Subsystem Trust Assessment: `MP4/Part B/MP4_PartB_Trust_Assessment_Template.md` (completed version)
-- DFM Checklist (completed): `MP4/Part B/dfm_checklist_completed.md`
-- Team Centaur Log: `MP4/Part B/MP4_PartB_Team_Centaur_Log_Template.md` (completed)
+- Drive-Train Sketch: `MP4/Part B/sketches/drive_train.png`
+- Per-Subsystem Trust Assessment: `MP4/Part B/MP4_PartB_Trust_Assessment_Template.md`
+- DFM Checklist: `MP4/Part B/MP4_PartB_DFM_Checklist.md`
+- Team Centaur Log: `MP4/Part B/MP4_PartB_Team_Centaur_Log_Template.md`
 - David Ricciotti's Part A: [DavidR734/ai-in-pd-spring2026-2 — MP4/Part A/MP4_PartA_Build_to_Verify.ipynb](https://github.com/DavidR734/ai-in-pd-spring2026-2/blob/main/MP4/Part%20A/MP4_PartA_Build_to_Verify.ipynb)
-- Haben Berhe's Part A: _[needs link to Haben's repo]_
-- Yoel Tesfatsion's Part A: _[needs link to Yoel's repo]_
+- Haben Berhe's Part A: [hab27/ai-in-pd-spring2026](https://github.com/hab27/ai-in-pd-spring2026)
+- Yoel Tesfatsion's Part A: _[awaiting Yoel's repo URL]_
