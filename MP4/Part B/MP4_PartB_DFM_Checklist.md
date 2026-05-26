@@ -50,9 +50,9 @@ Updated with Haben's linkage dimensions and Architecture A gear specs.
 
 | Part | Thinnest wall (mm) | Smallest feature (mm) | Flagged? |
 |------|---------------------|------------------------|----------|
-| Linkage ground link (47 mm, cross-section TBD) | Target ≥ 3 mm for strength (longer span than David's 12 mm link) | Pin bore Ø3.0 | No (bore is printable) |
-| Linkage coupler (29 mm) | Target ≥ 3 mm | Pin bore Ø3.0 | No — but longer span means more deflection risk under load |
-| Linkage input/output (20 mm / 23 mm) | Target ≥ 3 mm | Pin bore Ø3.0 | No |
+| Linkage ground link (47 mm, cross-section TBD) | Target ≥ 3 mm for strength (longer span than David's 12 mm link) | Pin bore Ø3.40 | No (bore is printable) |
+| Linkage coupler (29 mm) | Target ≥ 3 mm | Pin bore Ø3.40 | No — but longer span means more deflection risk under load |
+| Linkage input/output (20 mm / 23 mm) | Target ≥ 3 mm | Pin bore Ø3.40 | No |
 | Gear (20T, m=1.0) | Tooth root width ≈ 1.1 mm | Root fillet ~R0.50 mm | **Marginal** — root fillet near FDM minimum. Better than the 14T design (wider root at z=20). |
 | Hub (OD Ø8.0, bore Ø3.40) | Wall = (8.0 − 3.40)/2 = 2.3 mm | Bore Ø3.40 | No |
 | Housing | Target ≥ 1.5 mm walls | Shaft bore Ø3.40, snap-fit clips | **Yes** — snap-fit clips in PLA are brittle; recommend ≥ 2.0 mm clip thickness |

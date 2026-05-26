@@ -100,7 +100,7 @@ Gear specs: module m = 1.0 mm, z = 20 teeth each, pitch diameter = 20 mm, addend
 |-----------|-------|
 | Overall reduction N (product of stage reductions) | **1.0** |
 | Drive-train bounding-box footprint (mm) | 22 × 42 × 8 (two Ø22 mm gears side-by-side at 20 mm center distance, 8 mm face width) |
-| Packaging position relative to linkage | Centered in the housing behind the linkage ground pivots. The 20 mm center distance fits easily within the 92 mm housing width (36 mm of clearance per side). See sketch below. |
+| Packaging position relative to linkage | Centered in the housing behind the linkage ground pivots. The 42 mm bounding-box width fits within the 92 mm housing width (25 mm of clearance per side). See sketch below. |
 
 > Typical FDM PLA values: module 1.0–1.5 mm for spur, ~1.0 for worm.
 > z ≥ 12 for FDM spur gears; lower tooth counts have undercut issues
@@ -182,9 +182,9 @@ transmission angle at the implied range.
 The MP1 brief calls for a ~92 × 46 × 55 mm total envelope. Where does
 the drive train live?
 
-- **Driver location** (relative to thumb-wheel axis): The thumb wheel sits on Side 1's gear shaft, centered at x = 36 mm (offset from the housing left edge). The gear is inside the housing; the thumb wheel protrudes through a slot in the housing top.
+- **Driver location** (relative to thumb-wheel axis): The thumb wheel sits on Side 1's gear shaft, centered at x = 25 mm (offset from the housing left edge). The gear is inside the housing; the thumb wheel protrudes through a slot in the housing top.
 - **Final-stage gear / worm-wheel location** (relative to linkage input pivot O₂): The two gear shafts ARE the linkage input pivots for each side. Each gear sits directly on its side's input crank shaft.
-- **Total drive-train footprint vs. available housing volume:** 22 × 42 × 8 mm footprint (two Ø22 mm gears at 20 mm center distance). This occupies ~22/92 × 42/46 × 8/55 = 16% of the total housing volume.
+- **Total drive-train footprint vs. available housing volume:** 22 × 42 × 8 mm footprint (two Ø22 mm gears at 20 mm center distance). This occupies ~22/92 × 42/46 × 8/55 = 3.2% of the total housing volume.
 - **Clearance to the linkage:** The gears sit on the same shaft as the input cranks, so there is zero interference between the drive train and the linkage — they share the same rotational axis.
 
 ---
