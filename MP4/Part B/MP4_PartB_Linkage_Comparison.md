@@ -22,7 +22,7 @@ Section 1 design summary and Section 7 trust ledger.
 | Member | L1 / L2 / L3 / L4 (mm) | Output pivot offset (mm) | Single-side displacement (mm) | Implied total jaw opening (2× displacement, mm) | Min / max transmission angle | Part A trust ledger highlight |
 |--------|-------------------------|---------------------------|-------------------------------|-------------------------------------------------|------------------------------|--------------------------------|
 | David Ricciotti | 12 / 26 / 12 / 26 | (0, 12) | 12.5 | 25.0 | 62° / 90° | In band the whole time (22° margin above 40° floor). Symmetry assumption and gear-ratio-to-input-range mapping flagged as unverified. PLA pin wear at pivot joints (100+ cycle question from MP1). |
-| Haben Berhe | _[needs Haben's Part A data]_ | _[needs data]_ | _[needs data]_ | _[needs data]_ | _[needs data]_ | _[needs Haben's trust ledger highlight]_ |
+| Haben Berhe | 47 / 20 / 29 / 23 | (47, 0) | 20.06 | 40.13 | 61.3° / 91.3° | In band the whole time (21.3° margin above 40° floor). Symmetry assumption unverified — counter-rotation depends on gear pair. Housing clearance near joint B and coupler path not yet checked. Pin tolerance and friction assumed ideal. |
 | Yoel Tesfatsion | _[needs Yoel's Part A data]_ | _[needs data]_ | _[needs data]_ | _[needs data]_ | _[needs data]_ | _[needs Yoel's trust ledger highlight]_ |
 
 ---
@@ -54,10 +54,10 @@ david = {'L1': 12, 'L2': 26, 'L3': 12, 'L4': 26,
          'O4': (0, 12), 'tip_ext': 22, 'theta_range': (0, 28),
          'label': 'David'}
 
-# Haben's design — fill from Part A
-# haben = {'L1': ?, 'L2': ?, 'L3': ?, 'L4': ?,
-#          'O4': (?, ?), 'tip_ext': ?, 'theta_range': (?, ?),
-#          'label': 'Haben'}
+# Haben's design
+haben = {'L1': 47, 'L2': 20, 'L3': 29, 'L4': 23,
+         'O4': (47, 0), 'tip_ext': 9, 'theta_range': (-50, 50),
+         'label': 'Haben'}
 
 # Yoel's design — fill from Part A
 # yoel = {'L1': ?, 'L2': ?, 'L3': ?, 'L4': ?,
@@ -75,7 +75,7 @@ david = {'L1': 12, 'L2': 26, 'L3': 12, 'L4': 26,
 For each candidate, 2–3 sentence assessment:
 
 - **Linkage David Ricciotti:** Parallelogram (L1=L3=12, L2=L4=26) with vertical ground link gives pure translational jaw motion and a generous 22° margin above the 40° transmission angle floor. Envelope fit is comfortable (26 mm horizontal, 46.2 mm vertical vs. 46 × 55 mm budget). Unverified: symmetry under the mirrored gear pair, PLA link deflection under 5–8 N grip load.
-- **Linkage Haben Berhe:** _[needs Haben's Part A data and assessment]_
+- **Linkage Haben Berhe:** Crossed-branch four-bar (L1=47, L2=20, L3=29, L4=23) with horizontal ground link and 100° sweep (−50° to +50°) — reaches 20.06 mm single-side displacement, meeting the 40 mm total jaw opening target exactly. Transmission angle (61.3°–91.3°) stays in band with 21.3° margin. Larger footprint than David's design (47 mm ground link vs. 12 mm), which may be tighter in the housing envelope. Unverified: housing clearance near joint B, printed pin tolerance and friction.
 - **Linkage Yoel Tesfatsion:** _[needs Yoel's Part A data and assessment]_
 
 ---
