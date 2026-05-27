@@ -23,13 +23,13 @@ Section 1 design summary and Section 7 trust ledger.
 |--------|-------------------------|---------------------------|-------------------------------|-------------------------------------------------|------------------------------|--------------------------------|
 | David Ricciotti | 12 / 26 / 12 / 26 | (0, 12) | 12.5 | 25.0 | 62° / 90° | In band the whole time (22° margin above 40° floor). Symmetry assumption and gear-ratio-to-input-range mapping flagged as unverified. PLA pin wear at pivot joints (100+ cycle question from MP1). |
 | Haben Berhe | 47 / 20 / 29 / 23 | (47, 0) | 20.06 | 40.13 | 61.3° / 91.3° | In band the whole time (21.3° margin above 40° floor). Symmetry assumption unverified — counter-rotation depends on gear pair. Housing clearance near joint B and coupler path not yet checked. Pin tolerance and friction assumed ideal. |
-| Yoel Tesfatsion | _[awaiting Yoel's Part A notebook]_ | _[awaiting data]_ | _[awaiting data]_ | _[awaiting data]_ | _[awaiting data]_ | _[awaiting Yoel's trust ledger]_ |
+| Yoel Tesfatsion | _[No MP4 Part A submitted]_ | — | — | — | — | Yoel's repo ([YoelUW/ai-in-pd-spring2026](https://github.com/YoelUW/ai-in-pd-spring2026)) contains MP1–MP3 but no MP4 folder. His MP3 Part B focused on productizing the gear DFM review workflow (MCP RAG server + skill). No linkage design available for comparison. |
 
 ---
 
 ## Side-by-Side Plots
 
-Combined plots showing David's and Haben's candidate linkages on the same axes. Yoel's data will be added once his Part A notebook is available.
+Combined plots showing David's and Haben's candidate linkages on the same axes. Yoel did not submit an MP4 Part A notebook, so only two candidates are plotted.
 
 **1. Single-side finger displacement vs. input angle:**
 
@@ -49,7 +49,7 @@ For each candidate, 2–3 sentence assessment:
 
 - **Linkage Haben Berhe:** Crossed-branch four-bar (L1=47, L2=20, L3=29, L4=23) with horizontal ground link and 100° sweep (−50° to +50°) — reaches 20.06 mm single-side displacement, meeting the 40 mm total jaw opening target exactly. Transmission angle (61.3°–91.3°) stays in band with 21.3° margin, nearly matching David's 22° margin. Wider input range (100° vs. 28°) gives finer positional control. Larger footprint (47 mm ground link), but still within the 92 mm housing width. For reference, the BigClaw uses a 4-bar linkage with crank=32 mm, coupler=28 mm, jaw arm=45 mm, ground=38 mm, achieving 0–86 mm range (per Haben's MP3 RAG query of BigClaw teardown data). Haben's ground link (47 mm) is proportionally larger than the BigClaw's (38 mm), but this is expected given the different topology (crossed-branch vs. BigClaw's parallelogram-like arrangement).
 
-- **Linkage Yoel Tesfatsion:** _[awaiting Yoel's Part A notebook — will be added when available]_
+- **Linkage Yoel Tesfatsion:** No MP4 Part A linkage design submitted. Yoel's repo contains MP1 (design brief), MP2 (context management), and MP3 (productized gear DFM review skill with MCP RAG server and CAD interaction on a 30T/m=0.8 gear). His MP3 work focused on the gear review workflow rather than linkage geometry. His gear DFM skill and trust ledger insights (SF ≥ 2.0 for printed gears, face width ≥ 5 mm, hub rib manufacturing trade-off) are referenced in the team's Gear Pair Design and DFM Checklist.
 
 ---
 
@@ -65,6 +65,7 @@ For each candidate, 2–3 sentence assessment:
 
 - David's MP3 pinion CAD work (14T at m=1.0, root fillet R0.60, bore spec Ø3.00 +0.20/−0.00) informs the gear pair design, though the final architecture uses a simpler single spur pair rather than a compound train.
 - David's MP1 DFM analysis (pin clearances, FDM tolerances, PLA stress limits) applies directly to the chosen design.
+- Yoel's MP3 gear DFM review skill and trust ledger (SF ≥ 2.0 for printed gears, face width ≥ 5 mm, flat print orientation, hub simplicity over rib stiffness) inform the gear pair design and DFM checklist.
 
 **What got cut and why (be explicit):**
 
