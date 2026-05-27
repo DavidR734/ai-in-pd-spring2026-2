@@ -92,8 +92,8 @@ Updated with Architecture A gear specs (20T × 20T at m = 1.0).
 | Module (mm) | 1.0 | At the FDM minimum. Works but leaves no margin for extrusion width variation. m=1.5 is safer if packaging allows. |
 | Smallest tooth feature (root width or fillet) | ~1.1 mm root width; ~R0.50 fillet | Improved over 14T design (wider roots at z = 20). Fillet printable with 0.4 mm nozzle. |
 | Tooth count (each gear) | 20 / 20 (identical pair) | z = 20 is well above the z ≥ 12 FDM floor. Ø22 mm addendum circle — easily printable. |
-| Face width (mm) | 8.0 | Adequate — ≥ 3 mm threshold met with margin. |
-| Print orientation | Flat on bed (tooth profile in XY plane) | Strongly preferred for involute fidelity. |
+| Face width (mm) | 8.0 | Adequate — ≥ 3 mm threshold met with margin. Yoel’s MP3 gear DFM skill recommends ≥ 5 mm minimum face width for printed PLA gears; our 8 mm exceeds this. |
+| Print orientation | Flat on bed (tooth profile in XY plane) | Strongly preferred for involute fidelity. Yoel’s MP3 trust ledger confirms flat orientation is necessary so tooth loads are in-plane, not across layers. |
 | Backlash designed in (mm) | 0.10–0.15 mm | Slightly increased from MP3's 0.05–0.10 mm to account for FDM over-extrusion. Test print recommended. |
 
 ---

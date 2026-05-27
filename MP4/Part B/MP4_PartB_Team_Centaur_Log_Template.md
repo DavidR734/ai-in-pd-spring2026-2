@@ -116,6 +116,25 @@ the entry.
 
 ---
 
+## Loop 6 — Yoel's Repository Integration
+
+**Date:** 2026-05-26
+**Lead team member:** David Ricciotti
+**Context provided to AI:** Yoel's public repository URL ([YoelUW/ai-in-pd-spring2026](https://github.com/YoelUW/ai-in-pd-spring2026)), the instruction to read through all of his MP1–MP4 work and extract data for integration.
+**What we asked:**
+> Clone Yoel's repo and read through all his MP1–MP4 work to extract linkage design parameters and any other relevant data for the Part B templates.
+
+**What we got back:**
+> Devin cloned the repo and found that Yoel has MP1 (design brief — same shared brief), MP2 (context management — RAG and information problem), and MP3 (Part A: tools/skills/conductor; Part B: productized gear DFM review skill with MCP RAG server, CAD interaction on a 30T/m=0.8 gear, reflection and trust ledger). There is no MP4 folder — Yoel did not submit a Part A linkage design. His MP3 Part B provided useful gear DFM context: SF ≥ 2.0 for printed gears, face width ≥ 5 mm, flat print orientation for in-plane tooth loading, and the hub rib manufacturing trade-off (he overrode the AI's rib suggestion because added ribs increase support-removal time and bore shrinkage at production scale).
+
+**Team assessment:**
+> The gap is real — Yoel doesn't have a linkage design to compare. But his MP3 gear DFM work independently validates the team's design choices: our 8 mm face width exceeds his 5 mm recommendation, our SF = 2.14 passes his SF ≥ 2.0 threshold, and we're already using flat print orientation. His hub simplicity decision aligns with our Ø8 hub / Ø3.40 bore design. The team decided to reference his contributions in the Gear Pair Design, DFM Checklist, and Pointers sections rather than leaving his entries blank.
+
+**What changed:**
+> Linkage Comparison: Yoel's row updated from "awaiting notebook" to "No MP4 Part A submitted" with a summary of what his repo does contain. Comparison Notes include his MP3 contributions. Gear Pair Design and DFM Checklist reference his face width, SF, and print orientation recommendations. Trust Assessment and MP5 Handoff pointers updated with his repo URL and contribution summary.
+
+---
+
 ## Bonus loops (optional)
 
 > _Add as many additional `## Loop N` blocks as you want. Five is the

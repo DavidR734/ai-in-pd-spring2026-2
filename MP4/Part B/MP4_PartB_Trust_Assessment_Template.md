@@ -125,6 +125,7 @@ explicit paths:
 
 - Chosen Part A linkage source: Haben Berhe's `MP4_PartA_Build_to_Verify_completed.ipynb` ([hab27/ai-in-pd-spring2026](https://github.com/hab27/ai-in-pd-spring2026))
 - David Ricciotti's Part A: `MP4/Part A/MP4_PartA_Build_to_Verify.ipynb` ([DavidR734/ai-in-pd-spring2026-2](https://github.com/DavidR734/ai-in-pd-spring2026-2))
+- Yoel Tesfatsion's repo: [YoelUW/ai-in-pd-spring2026](https://github.com/YoelUW/ai-in-pd-spring2026) (MP1–MP3 only; no MP4 Part A — gear DFM skill and RAG server from MP3 Part B inform the team's design)
 - Linkage Comparison Worksheet: `MP4/Part B/MP4_PartB_Linkage_Comparison.md`
 - Drive-Train Design Worksheet: `MP4/Part B/MP4_PartB_Gear_Pair_Design.md`
 - DFM Checklist: `MP4/Part B/MP4_PartB_DFM_Checklist.md`
