@@ -8,26 +8,27 @@
 
 ## Demo Overview
 
-Two-part demo: (1) dynamic simulation of the four-bar linkage in motion, and (2) a live MCP tool call / function call on a real engineering question.
+Two-part demo: (1) pre-rendered SolidWorks-style simulation video of the four-bar linkage, and (2) a live MCP tool call / function call on a real engineering question.
 
 ---
 
-## Part 1: Dynamic Linkage Simulation (~2 min)
+## Part 1: Dynamic Linkage Simulation Video (~2 min)
 
 **What it shows:** Haben's four-bar linkage (L1=47, L2=20, L3=29, L4=23) sweeping from −50° to +50° input angle, with the jaw opening from 0 to 40 mm and closing back.
 
-**How to run:**
-```bash
-cd MP5/demo
-python3 linkage_simulation.py
+**How to play:**
+Simply open and play the video file — no Python or dependencies needed:
+```
+MP5/demo/miniclaw_simulation.mp4
 ```
 
 **What the audience sees:**
-- Animated four-bar linkage with all four links visible
-- Jaw tip tracing its path
-- Real-time display of: input angle, single-side displacement, transmission angle
-- Transmission angle bar/indicator showing it stays in the 40°–140° band
-- The jaw opening reaching 40 mm at full extension
+- SolidWorks-style dark background with colored solid links
+- Rounded link bodies with visible pin joints
+- Jaw tip tracing its path (red trail)
+- Real-time data panel showing: input angle, displacement, jaw opening, transmission angle
+- Transmission angle bar with workable band indicator
+- Color-coded margin warning (green/yellow/red)
 
 **Punchline:** "This is Haben's linkage — it hits exactly 40 mm jaw opening while keeping the transmission angle 21° above the safety floor the entire time."
 
@@ -64,20 +65,18 @@ haben_disp = compute_finger_position(L1=47, L2=20, L3=29, L4=23, ...)
 
 ## Fallback Plan
 
-If the live demo fails:
-1. **Pre-recorded video** of the simulation running (record before presentation day)
+The primary simulation is already a pre-rendered video — no live rendering dependencies. If video playback fails:
+1. **Open in browser** — drag `miniclaw_simulation.mp4` into Chrome
 2. **Static plots** from `MP4/Part B/plots/` as backup visuals
-3. **Live Python REPL** — run the computation functions directly in a terminal if the animation fails
+3. **Live Python REPL** — run `python3 transmission_angle_check.py` in a terminal
 
-**Recovery script:** "The animation isn't cooperating with the projector, but let me show you the computation directly — [switch to terminal, run the function call]"
+**Recovery script:** "Let me switch to the computation directly — [run transmission_angle_check.py in terminal]"
 
 ---
 
 ## Setup Checklist (day before)
 
 - [ ] Test laptop → projector connection
-- [ ] Verify Python + matplotlib + numpy are installed on presentation laptop
-- [ ] Run `linkage_simulation.py` end-to-end on the presentation laptop
-- [ ] Record fallback video of the simulation running
+- [ ] Verify `miniclaw_simulation.mp4` plays on presentation laptop (any video player)
+- [ ] Have `transmission_angle_check.py` ready in a terminal (needs Python + numpy)
 - [ ] Verify network is not required (all files are local)
-- [ ] Have `compute_transmission_angle()` ready in a terminal/notebook
