@@ -91,8 +91,8 @@ but framed as questions the team asks itself.
 
 ## Submission (counted in the points above)
 
-- [ ] **Slide deck (PDF)** uploaded to team repo by deadline
-  - *TODO: Team to create slide deck from outline and export as PDF*
+- [x] **Slide deck (PDF)** uploaded to team repo by deadline
+  - *`MP5/slides.pdf` — Final Slides uploaded*
 - [x] **Final design package** in repo: CAD or sim, drawings or
       annotated screenshots, parts list, assembly notes
   - *`MP5/final_design/design_summary.md` — complete with parts list and assembly notes*
@@ -102,7 +102,7 @@ but framed as questions the team asks itself.
 - [x] README with team roster, tools used, demo instructions
   - *`MP5/MP5_README.md` — complete*
 - [ ] **Repo URL on Canvas** — every team member submits the same URL
-  - *TODO: Each team member submits on Canvas*
+  - *TODO: Each team member submits `https://github.com/DavidR734/ai-in-pd-spring2026-2` on Canvas*
 
 ---
 
