@@ -114,5 +114,81 @@ You've spent nine weeks producing evidence. Stand on it.
   with your laptop during the Tuesday June 2 working session, or arrive
   ~15 minutes before your presentation day. Don't leave projector setup
   as a day-of-Thursday discovery. (Wed Jun 3 is the submission deadline
-  for Thursday presenters — you'll be sprinting on slides, not testing
-  hardware.)
+  for Thursday presenters, so the Tuesday session is your last test window.)
+
+---
+
+## Team Roster
+
+| Name | Role (MP5) | Responsibilities |
+|---|---|---|
+| David Ricciotti | Narrative lead | Slides 1–4, 8 (wrong-AI moment); Goal & Direction + Evaluation & Trust Q&A |
+| Haben Berhe | Slides lead | Slides 5, 7, 9; Context Management + Centaur Engineering Q&A |
+| Yoel Tesfatsion | Demo lead | Slides 6, 10, 11 (live demo); Tools & Integration Q&A |
+
+---
+
+## Tools Used
+
+| Tool | What it did |
+|---|---|
+| Devin (Cognition AI) | Primary AI assistant — Part A notebooks, Part B template integration, comparison plots, drive-train sketch, Lewis stress analysis, DFM tolerance calculations, PR creation |
+| GitHub Copilot (agent mode) | Haben's Part A notebook completion, David's MP3 gear CAD iteration |
+| MiniClaw Gear DFM Skill (Yoel) | MCP RAG server querying ACME corpus (ACME-ENG-001, ACME-MFG-002) for gear DFM validation |
+| matplotlib / numpy | Programmatic generation of comparison plots, linkage simulation, drive-train sketch |
+| GitHub | Version control — 12+ PRs across the project lifecycle |
+
+---
+
+## Demo Instructions
+
+### Prerequisites
+
+- Python 3.8+
+- `numpy` and `matplotlib` installed (`pip install numpy matplotlib`)
+
+### Running the dynamic simulation
+
+```bash
+cd MP5/demo
+python3 linkage_simulation.py
+```
+
+This opens an animated window showing Haben's four-bar linkage sweeping from −50° to +50°, with real-time display of jaw displacement and transmission angle.
+
+### Running the live tool call
+
+```bash
+cd MP5/demo
+python3 transmission_angle_check.py
+```
+
+This computes and compares transmission angles for:
+1. Haben's design (L3=29) — in band, 21.3° margin
+2. Perturbed geometry (L3=32) — margin changes
+3. David's design (L1=12, L2=26) — 25 mm jaw opening, 22° margin
+
+### Fallback
+
+If the animation doesn't work on the projector:
+1. Run `transmission_angle_check.py` in a terminal (text output only)
+2. Show pre-generated plots from `MP4/Part B/plots/`
+3. Play pre-recorded video of the simulation (record before presentation day)
+
+---
+
+## Artifact Index
+
+| Artifact | Path |
+|---|---|
+| Slide deck (PDF) | `MP5/slides.pdf` *(team to create and upload)* |
+| Design summary + parts list | [`MP5/final_design/design_summary.md`](final_design/design_summary.md) |
+| Final trust ledger | [`MP5/trust_ledger_final.md`](trust_ledger_final.md) |
+| Demo plan | [`MP5/demo/demo_plan.md`](demo/demo_plan.md) |
+| Linkage simulation | [`MP5/demo/linkage_simulation.py`](demo/linkage_simulation.py) |
+| Transmission angle tool | [`MP5/demo/transmission_angle_check.py`](demo/transmission_angle_check.py) |
+| Pillar narrative worksheet | [`MP5/MP5_Pillar_Narrative_Worksheet.md`](MP5_Pillar_Narrative_Worksheet.md) |
+| Self-assessment checklist | [`MP5/MP5_Self_Assessment.md`](MP5_Self_Assessment.md) |
+| Slide outline | [`MP5/MP5_Slide_Outline_Optional.md`](MP5_Slide_Outline_Optional.md) |
+| MP4 Part B artifacts | [`MP4/Part B/`](../MP4/Part%20B/) |
+| MP4 Part B README | [`MP4_PartB_README.md`](../MP4_PartB_README.md) |
