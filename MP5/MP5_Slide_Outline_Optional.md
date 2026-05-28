@@ -1,95 +1,178 @@
-# MP5 Slide Outline — OPTIONAL
+# MP5 Slide Outline — Team Ricciotti-Berhe-Tesfatsion
 
-This is a starting structure for teams that want one. **Optional.** Pick
-your own deck shape if you have a better story arc; the rubric grades
-the narrative and the demo, not the slide order.
-
-If a team uses this outline, expect ~1 minute per content slide and ~3
-minutes for the live demo, leaving buffer for the title and Q&A intro.
-Adjust freely.
+Based on the optional 12-slide structure. Content pulled from the Pillar
+Narrative Worksheet and MP1–MP4 artifacts.
 
 ---
 
-## Suggested 12-Slide Outline
+## Slide 1: Title (30 s) — *David*
 
-| # | Slide | Approx. time | What it shows |
-|---|-------|------|----------------|
-| 1 | **Title** | 30 s | Team name, MiniClaw title, member photos optional |
-| 2 | **The brief** | 1 min | What we were asked to do (the original Jordan Chen design brief) |
-| 3 | **Where we ended up** | 1 min | Final MiniClaw — one image, one sentence |
-| 4 | **Pillar 1 — Goal & Direction** | 1 min | The renegotiation story |
-| 5 | **Pillar 2 — Context Management** | 1 min | The saved-you moment |
-| 6 | **Pillar 3 — Tools & Integration** | 1 min | Stack overview, hands the demo to slide 11 |
-| 7 | **Pillar 4 — Centaur Engineering** | 1 min | The strongest centaur loop |
-| 8 | **Pillar 5 — Evaluation & Trust** | 2 min | The wrong-AI moment Jordan asked about — give this slide more room |
-| 9 | **Narrative through-line** | 1 min | What was the actual story of our MiniClaw? |
-| 10 | **What we'd do differently** | 1 min | One honest answer |
-| 11 | **Live demo** | 3 min | The thing that runs — physical prototype or dynamic sim, **plus at least one live MCP tool call or function call** on a real engineering question |
-| 12 | **Q&A** | 5 min | Designated answerer per pillar |
+**MiniClaw: From Wrong Requirements to Honest Design**
 
-Total content: ~13.5 min. Q&A: 5 min. Buffer for title and transitions: ~1.5 min. Lands at 20 min total.
+Team Ricciotti-Berhe-Tesfatsion | ME 493B | RobotExpo 2026
 
 ---
 
-## Notes on each section
+## Slide 2: The Brief (1 min) — *David*
 
-**Slides 4–8 (the pillar slides).** These are the heart of the deck.
-Each one needs:
+**What Jordan asked for:**
+- Compete with Hiwonder's BigClaw at RobotExpo 2026
+- 92 × 46 × 55 mm envelope
+- ≥ 40 mm jaw opening, 2–3 thumb-wheel turns
+- 5–8 N grip force, FDM PLA, < 15 parts, < $3/unit at 500 units
 
-- A title that names the pillar
-- A specific moment from your work — a notebook cell, a transcript line,
-  a sketch, an MCP log entry
-- A one-sentence takeaway that the audience will remember 24 hours later
-
-Resist the temptation to put a definition of the pillar on the slide.
-The audience doesn't need to be reminded what "Centaur Engineering"
-means — they need to see what your team did.
-
-**Slide 8 (Evaluation & Trust).** The wrong-AI moment slide is the most
-important slide in the deck per Jordan's note. Build it around three
-things:
-
-1. What the AI claimed (with a screenshot or quote if you have one)
-2. What was actually true
-3. How you caught it — what triangulated, who pushed back, what
-   evidence won
-
-If your team can show *the actual transcript or screenshot of the
-wrong answer*, that's the strongest version of this slide.
-
-**Slide 11 (Live demo).** Two pieces, one slot:
-
-1. The mechanism showing motion — physical prototype operated in front
-   of the class, or a dynamic CAD/sim that actually runs.
-2. At least one **live MCP tool call or function call** on a real
-   engineering question relevant to your design. This is how the Tools
-   & Integration pillar shows up in the demo.
-
-You can run them back-to-back or interleave. Graded on whether it runs,
-not on whether the answer matches a golden output. Have a fallback ready
-— a recorded video of the demo running on your home setup is acceptable
-insurance. If you're switching laptops or windows during the demo,
-practice the switch.
-
-**Slide 12 (Q&A).** Decide ahead of time who answers questions about
-each pillar. The handoff in Q&A — "good question, [teammate name] is
-the one who actually built that, I'll let her answer" — is a real
-presentation skill and the room recognizes it.
+*Visual: MP1 design brief header + BigClaw dimensional drawing side by side*
 
 ---
 
-## Anti-patterns to avoid
+## Slide 3: Where We Ended Up (1 min) — *David*
 
-- **Wall of text.** If a slide has more than ~30 words, the audience is
-  reading instead of listening to you.
-- **Generic timeline slide.** "Week 1 we did MP1, Week 2 we did MP2..."
-  is not a narrative.
-- **Hiding the failure.** The wrong-AI moment is the asset, not the
-  liability. If you don't have one yet, find one before Thursday — the
-  team that says "we never needed to push back on the AI" is probably
-  the team that was paying the least attention.
-- **Demo for demo's sake.** The demo serves the narrative. If your demo
-  doesn't connect to a pillar story, cut it or replace it.
-- **Last-minute team-member airtime adjustments.** Decide who speaks
-  when, then rehearse it. "Oh, I guess I'll do this slide too" looks
-  like exactly what it is.
+**What we delivered:**
+
+| Spec | Target | Actual |
+|---|---|---|
+| Jaw opening | ≥ 40 mm | 40.13 mm ✓ |
+| Envelope | 92 × 46 × 55 | 92 × 46 × 55 ✓ |
+| Turns | 2–3 | 0.28 ✗ (renegotiated) |
+| Parts | < 15 | 25 (over) |
+| Gear stress SF | ≥ 2.0 | 2.14 ✓ |
+
+*Visual: drive train sketch + displacement comparison plot*
+
+---
+
+## Slide 4: Goal & Direction (1 min) — *David*
+
+**The renegotiation story:**
+
+We accepted 0.28 thumb-wheel turns instead of 2–3 because the compound spur train (N=16) had center distances summing to 126 mm — 34 mm over the housing width. Switching to a single spur pair (N=1) dropped center distance to 20 mm and part count from 29 to 25.
+
+*Visual: Architecture B packaging failure (126 mm) vs. Architecture A (20 mm)*
+
+**Moment:** Centaur Loop 2 — the AI showed that Haben's wider sweep made Architecture A viable. The team chose simplicity over the turn-count spec.
+
+---
+
+## Slide 5: Context Management (1 min) — *Haben*
+
+**Where context saved us:**
+
+The AI designed to wrong requirements (40 mm / 46° range) until David fed it the MP1 brief and MP3 evidence. One document upload corrected the entire design basis: link lengths changed, input range narrowed, displacement target dropped.
+
+**Where context was missing:**
+
+Haben's repo was private → 403 error. Once public, we extracted ACME press-fit tolerances, BigClaw teardown dimensions, and the SF ≥ 2.0 standard. Yoel's MP4 Part A was never submitted — his linkage row is empty.
+
+*Visual: before/after parameter table showing the context correction*
+
+---
+
+## Slide 6: Tools & Integration (1 min) — *Yoel*
+
+**Our stack:**
+- **Devin** (Cognition AI): Part A notebooks, Part B templates, plots, sketches, stress analysis
+- **Copilot agent mode**: Haben's Part A, David's MP3 gear CAD
+- **MiniClaw gear DFM skill** (Yoel's MP3): MCP RAG server + ACME corpus
+- **GitHub**: 12 PRs, version-controlled integration
+
+**Live demo preview:** Dynamic simulation of Haben's linkage + live `compute_transmission_angle()` call on perturbed geometry
+
+*Hands off to Slide 11 for live demo*
+
+---
+
+## Slide 7: Centaur Engineering (1 min) — *Haben*
+
+**Strongest loop: Pin Clearance Review (Loop 3)**
+
+David asked Devin: "What bore diameter gives a reliable sliding fit after FDM tolerance?"
+
+- AI calculated: Ø3.20 bore → 0.00 mm post-FDM clearance (interference)
+- AI proposed: Ø3.40 bore → 0.20 mm post-FDM (sliding fit)
+- Neither side alone: David had the FDM tolerance data, the AI did the systematic stack calculation
+
+**Result:** Bore increased across all 10 joints. No reaming needed.
+
+*Visual: tolerance stack table from evidence/loop3_dfm_pin_clearance.md*
+
+---
+
+## Slide 8: Evaluation & Trust — The Wrong-AI Moment (2 min) — *David*
+
+**The claim:** Devin designed David's linkage targeting 40 mm jaw opening with 0°–46° input range. Complete, internally consistent design — position equations, plots, hand calculations all checked out.
+
+**The truth:** David's MP1 brief specified 25 mm jaw opening, 0°–28° range.
+
+**How we caught it:** David compared the AI's output against his original design brief. The numbers didn't match. One document upload fixed everything.
+
+**What it teaches:** The AI will confidently build on wrong assumptions if you don't provide the requirements document. Context management isn't optional — it's the difference between a correct design and a plausible-looking wrong one.
+
+*Visual: screenshot/quote of the AI's original wrong parameters vs. the corrected ones*
+
+---
+
+## Slide 9: Per-Subsystem Trust (1 min) — *Haben*
+
+| Subsystem | Flag | Print? |
+|---|---|---|
+| Linkage | Needs work | Yes — strongest analytically |
+| Drive train | Needs work | Yes — SF 2.14, compact |
+| Jaw arms | Unknown | No — no CAD |
+| Housing | Unknown | No — no CAD |
+| Input wheel | Unknown | No — no CAD |
+| Pins | Needs work | Yes — test one joint first |
+
+**Bottom line:** Not ready to print a complete gripper. Three subsystems are analytically solid; three have no CAD. Honest assessment.
+
+---
+
+## Slide 10: What We'd Do Differently (1 min) — *Yoel*
+
+**One honest answer:**
+
+Set up a shared team repo from Day 1. The cross-repo integration (cloning Haben's private repo, cloning Yoel's repo, extracting parameters) added friction that a single shared workspace would have eliminated.
+
+Also: build the transmission angle MCP tool earlier. Having it live during linkage selection (Loop 1) would have made the comparison interactive instead of static.
+
+---
+
+## Slide 11: Live Demo (3 min) — *Yoel*
+
+**Part 1:** Dynamic simulation — Haben's four-bar sweeping −50° to +50°, showing jaw opening reaching 40 mm, transmission angle staying in band.
+
+**Part 2:** Live tool call — `compute_transmission_angle()` on perturbed geometry (L3=32 instead of 29). Shows the angle drops — tool catches bad geometry instantly.
+
+*Run: `python3 MP5/demo/linkage_simulation.py` then `python3 MP5/demo/transmission_angle_check.py`*
+
+**Fallback:** Pre-recorded video + static plots from MP4/Part B/plots/
+
+---
+
+## Slide 12: Q&A (5 min) — *All*
+
+**Designated answerers:**
+- Goal & Direction → David
+- Context Management → Haben
+- Tools & Integration → Yoel
+- Centaur Engineering → Haben
+- Evaluation & Trust → David
+
+---
+
+## Timing Budget
+
+| Slide | Time | Cumulative |
+|---|---|---|
+| 1. Title | 0:30 | 0:30 |
+| 2. Brief | 1:00 | 1:30 |
+| 3. Where we ended up | 1:00 | 2:30 |
+| 4. Goal & Direction | 1:00 | 3:30 |
+| 5. Context Management | 1:00 | 4:30 |
+| 6. Tools & Integration | 1:00 | 5:30 |
+| 7. Centaur Engineering | 1:00 | 6:30 |
+| 8. Wrong-AI Moment | 2:00 | 8:30 |
+| 9. Trust Assessment | 1:00 | 9:30 |
+| 10. What we'd do differently | 1:00 | 10:30 |
+| 11. Live demo | 3:00 | 13:30 |
+| 12. Q&A | 5:00 | 18:30 |
+| Buffer | 1:30 | **20:00** |
