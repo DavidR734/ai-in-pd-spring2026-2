@@ -38,6 +38,8 @@ the entry.
 **What changed:**
 > Haben's linkage selected as the team's design. This cascaded into all subsequent worksheets: the gear pair design, trust assessment, and DFM checklist were all updated to use Haben's geometry. The 100° input sweep (vs. David's 28°) fundamentally changed the drive train requirements.
 
+**Evidence:** [`evidence/loop1_linkage_comparison.md`](evidence/loop1_linkage_comparison.md), [`plots/displacement_comparison.png`](plots/displacement_comparison.png), [`plots/mu_comparison.png`](plots/mu_comparison.png)
+
 ---
 
 ## Loop 2 — Drive Train Architecture Decision
@@ -56,6 +58,8 @@ the entry.
 
 **What changed:**
 > Architecture switched from B (compound spur) to A (single spur pair). Gear count dropped from 5 to 2. Overall part count dropped from 29 to 25. Center distances dropped from 126 mm (over budget) to 20 mm (well within 92 mm envelope). The packaging problem that was the #1 risk in the compound train is now eliminated.
+
+**Evidence:** [`evidence/loop2_architecture_decision.md`](evidence/loop2_architecture_decision.md)
 
 ---
 
@@ -76,6 +80,8 @@ the entry.
 **What changed:**
 > Bore diameter increased from Ø3.20 to Ø3.40 mm across all 10 rotating joints. Pin clearance went from "borderline — may not fit" to "reliable sliding fit." Lewis safety factor improved from ~1.4 (14T) to 2.14 (20T) at nominal torque. DFM checklist updated with all new values.
 
+**Evidence:** [`evidence/loop3_dfm_pin_clearance.md`](evidence/loop3_dfm_pin_clearance.md)
+
 ---
 
 ## Loop 4 — Trust Assessment Integration
@@ -95,6 +101,8 @@ the entry.
 **What changed:**
 > Trust assessment completely rewritten for the final design. The overall readiness conclusion is "not ready to print tomorrow" — the analytical work is solid, but three subsystems have no CAD and no physical testing has been done. The biggest shift from the previous version: the drive train went from "biggest risk" (packaging doesn't fit) to "well-sized and compact" (20 mm center distance).
 
+**Evidence:** [`evidence/loop4_trust_assessment.md`](evidence/loop4_trust_assessment.md)
+
 ---
 
 ## Loop 5 — MP5 Handoff and Demonstration Planning
@@ -113,6 +121,8 @@ the entry.
 
 **What changed:**
 > MP5 handoff document finalized with all decisions. Team roles locked in. Demo plan committed: dynamic simulation of linkage motion + live MCP tool call for a real engineering question (e.g., recomputing transmission angles for a perturbed geometry). The wrong-AI moment is ready for the presentation narrative.
+
+**Evidence:** [`evidence/loop5_mp5_handoff.md`](evidence/loop5_mp5_handoff.md)
 
 ---
 
