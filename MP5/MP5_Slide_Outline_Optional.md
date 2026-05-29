@@ -61,7 +61,7 @@ The AI designed to wrong requirements (40 mm / 46° range) until David fed it th
 
 **Where context was missing:**
 
-Haben's repo was private → 403 error. Once public, we extracted ACME press-fit tolerances, BigClaw teardown dimensions, and the SF ≥ 2.0 standard. Yoel's MP4 Part A was never submitted — his linkage row is empty.
+Haben's repo was private → 403 error. Once public, we extracted ACME press-fit tolerances, BigClaw teardown dimensions, and the SF ≥ 2.0 standard. Yoel's MP4 Part A was submitted late — his linkage (24 mm jaw, μ=57°–119°) confirmed Haben's design as the right selection.
 
 *Visual: before/after parameter table showing the context correction*
 

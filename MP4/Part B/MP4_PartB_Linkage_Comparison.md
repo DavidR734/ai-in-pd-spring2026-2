@@ -23,13 +23,13 @@ Section 1 design summary and Section 7 trust ledger.
 |--------|-------------------------|---------------------------|-------------------------------|-------------------------------------------------|------------------------------|--------------------------------|
 | David Ricciotti | 12 / 26 / 12 / 26 | (0, 12) | 12.5 | 25.0 | 62° / 90° | In band the whole time (22° margin above 40° floor). Symmetry assumption and gear-ratio-to-input-range mapping flagged as unverified. PLA pin wear at pivot joints (100+ cycle question from MP1). |
 | Haben Berhe | 47 / 20 / 29 / 23 | (47, 0) | 20.06 | 40.13 | 61.3° / 91.3° | In band the whole time (21.3° margin above 40° floor). Symmetry assumption unverified — counter-rotation depends on gear pair. Housing clearance near joint B and coupler path not yet checked. Pin tolerance and friction assumed ideal. |
-| Yoel Tesfatsion | _[No MP4 Part A submitted]_ | — | — | — | — | Yoel's repo ([YoelUW/ai-in-pd-spring2026](https://github.com/YoelUW/ai-in-pd-spring2026)) contains MP1–MP3 but no MP4 folder. His MP3 Part B focused on productizing the gear DFM review workflow (MCP RAG server + skill). No linkage design available for comparison. |
+| Yoel Tesfatsion | 30.59 / 7 / 28 / 12 | (30, 6) | 12.0 | 24.0 | 57° / 119° | In band the whole time (17° margin above 40° floor). Geometry tied to MiniClaw design package (7 mm crank, 12 mm jaw-link, 30 mm contact scale). Symmetry and gear synchronization flagged as unverified. Real PLA joint friction and pin clearance not checked. |
 
 ---
 
 ## Side-by-Side Plots
 
-Combined plots showing David's and Haben's candidate linkages on the same axes. Yoel did not submit an MP4 Part A notebook, so only two candidates are plotted.
+Combined plots showing all three candidate linkages on the same axes.
 
 **1. Single-side finger displacement vs. input angle:**
 
@@ -49,7 +49,7 @@ For each candidate, 2–3 sentence assessment:
 
 - **Linkage Haben Berhe:** Crossed-branch four-bar (L1=47, L2=20, L3=29, L4=23) with horizontal ground link and 100° sweep (−50° to +50°) — reaches 20.06 mm single-side displacement, meeting the 40 mm total jaw opening target exactly. Transmission angle (61.3°–91.3°) stays in band with 21.3° margin, nearly matching David's 22° margin. Wider input range (100° vs. 28°) gives finer positional control. Larger footprint (47 mm ground link), but still within the 92 mm housing width. For reference, the BigClaw uses a 4-bar linkage with crank=32 mm, coupler=28 mm, jaw arm=45 mm, ground=38 mm, achieving 0–86 mm range (per Haben's MP3 RAG query of BigClaw teardown data). Haben's ground link (47 mm) is proportionally larger than the BigClaw's (38 mm), but this is expected given the different topology (crossed-branch vs. BigClaw's parallelogram-like arrangement).
 
-- **Linkage Yoel Tesfatsion:** No MP4 Part A linkage design submitted. Yoel's repo contains MP1 (design brief), MP2 (context management), and MP3 (productized gear DFM review skill with MCP RAG server and CAD interaction on a 30T/m=0.8 gear). His MP3 work focused on the gear review workflow rather than linkage geometry. His gear DFM skill and trust ledger insights (SF ≥ 2.0 for printed gears, face width ≥ 5 mm, hub rib manufacturing trade-off) are referenced in the team's Gear Pair Design and DFM Checklist.
+- **Linkage Yoel Tesfatsion:** Gear-and-connecting-rod four-bar (L1=30.59, L2=7, L3=28, L4=12) with offset ground pivot at O4=(30,6) and 30 mm tip extension matching the MiniClaw design document's jaw-contact scale. Input range 20°–140° (120° sweep) yields 12.0 mm single-side displacement → 24.0 mm total jaw opening. Transmission angle 57°–119° stays in band with 17° margin above the 40° floor — the widest μ range of the three candidates. However, the 24 mm total jaw opening falls short of the 40 mm MP1 target, and the 7 mm crank with 120° sweep means the output motion is small relative to the input rotation. Yoel's MP3 gear DFM skill and trust ledger insights (SF ≥ 2.0 for printed gears, face width ≥ 5 mm, hub rib manufacturing trade-off) are referenced in the team's Gear Pair Design and DFM Checklist.
 
 ---
 

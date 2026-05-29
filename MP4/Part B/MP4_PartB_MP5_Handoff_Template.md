@@ -91,4 +91,4 @@ For the MP5 portfolio narrative — link, don't copy:
 - Team Centaur Log: `MP4/Part B/MP4_PartB_Team_Centaur_Log_Template.md`
 - David Ricciotti's Part A: [DavidR734/ai-in-pd-spring2026-2 — MP4/Part A/MP4_PartA_Build_to_Verify.ipynb](https://github.com/DavidR734/ai-in-pd-spring2026-2/blob/main/MP4/Part%20A/MP4_PartA_Build_to_Verify.ipynb)
 - Haben Berhe's Part A: [hab27/ai-in-pd-spring2026](https://github.com/hab27/ai-in-pd-spring2026)
-- Yoel Tesfatsion's repo: [YoelUW/ai-in-pd-spring2026](https://github.com/YoelUW/ai-in-pd-spring2026) (contains MP1–MP3; no MP4 Part A submitted — Yoel's MP3 Part B gear DFM skill and RAG server inform the team's gear design and DFM checklist)
+- Yoel Tesfatsion's repo: [YoelUW/ai-in-pd-spring2026](https://github.com/YoelUW/ai-in-pd-spring2026) (MP1–MP3 + MP4 Part A: gear-and-connecting-rod four-bar, L1=30.59/L2=7/L3=28/L4=12, 24 mm jaw opening, μ=57°–119°; gear DFM skill from MP3 informs team design)

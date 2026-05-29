@@ -135,13 +135,13 @@ the entry.
 > Clone Yoel's repo and read through all his MP1–MP4 work to extract linkage design parameters and any other relevant data for the Part B templates.
 
 **What we got back:**
-> Devin cloned the repo and found that Yoel has MP1 (design brief — same shared brief), MP2 (context management — RAG and information problem), and MP3 (Part A: tools/skills/conductor; Part B: productized gear DFM review skill with MCP RAG server, CAD interaction on a 30T/m=0.8 gear, reflection and trust ledger). There is no MP4 folder — Yoel did not submit a Part A linkage design. His MP3 Part B provided useful gear DFM context: SF ≥ 2.0 for printed gears, face width ≥ 5 mm, flat print orientation for in-plane tooth loading, and the hub rib manufacturing trade-off (he overrode the AI's rib suggestion because added ribs increase support-removal time and bore shrinkage at production scale).
+> Devin extracted Yoel's completed MP4 Part A package (submitted as a zip). His design: gear-and-connecting-rod four-bar (L1=30.59, L2=7, L3=28, L4=12) with O4=(30,6), 30 mm tip extension, input range 20°–140°. Achieves 12.0 mm single-side displacement (24.0 mm jaw opening) with transmission angle 57°–119° (17° margin above 40° floor). His geometry is tied to the MiniClaw design package (7 mm crank, 12 mm jaw-link, 30 mm contact scale). His MP3 Part B gear DFM context (SF ≥ 2.0, face width ≥ 5 mm, flat orientation) continues to validate the team's design.
 
 **Team assessment:**
-> The gap is real — Yoel doesn't have a linkage design to compare. But his MP3 gear DFM work independently validates the team's design choices: our 8 mm face width exceeds his 5 mm recommendation, our SF = 2.14 passes his SF ≥ 2.0 threshold, and we're already using flat print orientation. His hub simplicity decision aligns with our Ø8 hub / Ø3.40 bore design. The team decided to reference his contributions in the Gear Pair Design, DFM Checklist, and Pointers sections rather than leaving his entries blank.
+> Yoel's linkage achieves 24 mm jaw opening — closer to David's 25 mm than Haben's 40 mm. This confirms the team's selection of Haben's design, which is the only candidate hitting the 40 mm MP1 target. Yoel's wider μ range (57°–119°) shows his geometry is mechanically sound, but the short 7 mm crank limits displacement. His MP3 gear DFM recommendations continue to validate the team's 20T gear design (SF=2.14 > 2.0, face width 8 mm > 5 mm).
 
 **What changed:**
-> Linkage Comparison: Yoel's row updated from "awaiting notebook" to "No MP4 Part A submitted" with a summary of what his repo does contain. Comparison Notes include his MP3 contributions. Gear Pair Design and DFM Checklist reference his face width, SF, and print orientation recommendations. Trust Assessment and MP5 Handoff pointers updated with his repo URL and contribution summary.
+> Linkage Comparison: Yoel's row fully populated with his design parameters (L1=30.59, L2=7, L3=28, L4=12, 24 mm jaw, 57°–119° μ). Comparison plots regenerated with all three candidates. Comparison Notes updated with his design assessment. Trust Assessment and MP5 Handoff pointers updated.
 
 ---
 
