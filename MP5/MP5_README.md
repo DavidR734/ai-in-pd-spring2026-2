@@ -147,33 +147,31 @@ You've spent nine weeks producing evidence. Stand on it.
 - Python 3.8+
 - `numpy` and `matplotlib` installed (`pip install numpy matplotlib`)
 
-### Running the dynamic simulation
+### Option A: Pre-rendered simulation video (recommended)
+
+Play the video file directly — no dependencies needed:
+```
+MP5/demo/miniclaw_simulation.mp4
+```
+
+### Option B: Jupyter notebook on GitHub (click and view)
+
+Navigate to [`MP5/demo/MiniClaw_Demo.ipynb`](demo/MiniClaw_Demo.ipynb) on GitHub. All outputs pre-rendered — no code needs to run.
+
+### Option C: Live Python scripts
 
 ```bash
 cd MP5/demo
-python3 linkage_simulation.py
+python3 linkage_simulation.py       # animated four-bar linkage
+python3 transmission_angle_check.py  # tool call comparing designs
 ```
-
-This opens an animated window showing Haben's four-bar linkage sweeping from −50° to +50°, with real-time display of jaw displacement and transmission angle.
-
-### Running the live tool call
-
-```bash
-cd MP5/demo
-python3 transmission_angle_check.py
-```
-
-This computes and compares transmission angles for:
-1. Haben's design (L3=29) — in band, 21.3° margin
-2. Perturbed geometry (L3=32) — margin changes
-3. David's design (L1=12, L2=26) — 25 mm jaw opening, 22° margin
 
 ### Fallback
 
-If the animation doesn't work on the projector:
-1. Run `transmission_angle_check.py` in a terminal (text output only)
-2. Show pre-generated plots from `MP4/Part B/plots/`
-3. Play pre-recorded video of the simulation (record before presentation day)
+If video/animation won't play on the projector:
+1. Open `MiniClaw_Demo.ipynb` on GitHub (browser only)
+2. Run `python3 transmission_angle_check.py` in a terminal (text output)
+3. Show pre-generated plots from `MP4/Part B/plots/`
 
 ---
 
@@ -181,11 +179,13 @@ If the animation doesn't work on the projector:
 
 | Artifact | Path |
 |---|---|
-| Slide deck (PDF) | `MP5/slides.pdf` *(team to create and upload)* |
+| Slide deck (PDF) | [`MP5/slides.pdf`](slides.pdf) |
 | Design summary + parts list | [`MP5/final_design/design_summary.md`](final_design/design_summary.md) |
 | Final trust ledger | [`MP5/trust_ledger_final.md`](trust_ledger_final.md) |
 | Demo plan | [`MP5/demo/demo_plan.md`](demo/demo_plan.md) |
-| Linkage simulation | [`MP5/demo/linkage_simulation.py`](demo/linkage_simulation.py) |
+| Simulation video | [`MP5/demo/miniclaw_simulation.mp4`](demo/miniclaw_simulation.mp4) |
+| Demo notebook | [`MP5/demo/MiniClaw_Demo.ipynb`](demo/MiniClaw_Demo.ipynb) |
+| Linkage simulation (source) | [`MP5/demo/linkage_simulation.py`](demo/linkage_simulation.py) |
 | Transmission angle tool | [`MP5/demo/transmission_angle_check.py`](demo/transmission_angle_check.py) |
 | Pillar narrative worksheet | [`MP5/MP5_Pillar_Narrative_Worksheet.md`](MP5_Pillar_Narrative_Worksheet.md) |
 | Self-assessment checklist | [`MP5/MP5_Self_Assessment.md`](MP5_Self_Assessment.md) |
