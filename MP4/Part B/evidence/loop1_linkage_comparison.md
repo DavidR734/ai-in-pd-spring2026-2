@@ -15,7 +15,7 @@
 
 - Haben's completed notebook: `MP4_PartA_Build_to_Verify_completed.ipynb`
 - David's Part A notebook (already in repo at `MP4/Part A/`)
-- MP1 Part B design brief: 40 mm jaw opening target, 92 × 46 × 55 mm envelope
+- MP1 Part B design brief: ~25 mm grip-object size (no numeric jaw opening stated), 92 × 46 × 55 mm envelope; team adopted a self-imposed ≥40 mm jaw-opening target
 
 ## AI output (key extracted parameters)
 
@@ -35,4 +35,4 @@
 
 ## Team decision
 
-Selected Haben's linkage: meets 40 mm target, comparable μ margin, wider sweep.
+Selected Haben's linkage: only candidate meeting the team's self-imposed 40 mm jaw-opening target, comparable μ margin, wider sweep.

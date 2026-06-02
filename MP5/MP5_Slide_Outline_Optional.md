@@ -17,9 +17,11 @@ Team Ricciotti-Berhe-Tesfatsion | ME 493B | RobotExpo 2026
 
 **What Jordan asked for:**
 - Compete with Hiwonder's BigClaw at RobotExpo 2026
-- 92 × 46 × 55 mm envelope
-- ≥ 40 mm jaw opening, 2–3 thumb-wheel turns
+- 92 × 46 × 55 mm envelope (scale down ~20% from the BigClaw, 0–86 mm range)
+- Close on a ~25 mm object, 2–3 thumb-wheel turns
 - 5–8 N grip force, FDM PLA, < 15 parts, < $3/unit at 500 units
+
+*Note: the brief states no numeric jaw opening — the team set ≥40 mm as a self-imposed target (clears the ~25 mm object, ~half the BigClaw range).*
 
 *Visual: MP1 design brief header + BigClaw dimensional drawing side by side*
 
@@ -31,7 +33,7 @@ Team Ricciotti-Berhe-Tesfatsion | ME 493B | RobotExpo 2026
 
 | Spec | Target | Actual |
 |---|---|---|
-| Jaw opening | ≥ 40 mm | 40.13 mm ✓ |
+| Jaw opening | ≥ 40 mm (team target) | 40.13 mm ✓ |
 | Envelope | 92 × 46 × 55 | 92 × 46 × 55 ✓ |
 | Turns | 2–3 | 0.28 ✗ (renegotiated) |
 | Parts | < 15 | 25 (over) |
@@ -57,7 +59,7 @@ We accepted 0.28 thumb-wheel turns instead of 2–3 because the compound spur tr
 
 **Where context saved us:**
 
-The AI designed to wrong requirements (40 mm / 46° range) until David fed it the MP1 brief and MP3 evidence. One document upload corrected the entire design basis: link lengths changed, input range narrowed, displacement target dropped.
+The AI designed to invented specs it guessed (40 mm jaw / 46° range) until David fed it his MP1 Part B and MP3 work. One document upload corrected the entire design basis to David's own prior figures (~25 mm jaw to grip the brief's ~25 mm object): link lengths changed, input range narrowed, displacement target dropped.
 
 **Where context was missing:**
 

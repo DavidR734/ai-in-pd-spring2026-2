@@ -11,15 +11,18 @@ The MiniClaw is a hand-driven mechanical gripper designed to compete with Hiwond
 
 ### Key Specifications
 
-| Parameter | MP1 Target | Final Design | Status |
+| Parameter | Target | Final Design | Status |
 |---|---|---|---|
-| Envelope | 92 × 46 × 55 mm | 92 × 46 × 55 mm | Met |
-| Jaw opening | ≥ 40 mm | 40.13 mm | Met |
-| Thumb-wheel turns | 2–3 | 0.28 | Renegotiated |
-| Grip force | 5–8 N | Analytically feasible | Untested |
-| Material | FDM PLA | FDM PLA (FilaTech PolyPro) | Met |
-| Part count | < 15 | 25 | Over target |
-| Cost per unit | < $3 at 500 units | ~$2–3 estimated | Estimated |
+| Envelope | 92 × 46 × 55 mm (MP1) | 92 × 46 × 55 mm | Met |
+| Grip object size | ~25 mm (MP1) | 40 mm jaw clears it | Met |
+| Jaw opening | ≥ 40 mm (team target¹) | 40.13 mm | Met |
+| Thumb-wheel turns | 2–3 (MP1) | 0.28 | Renegotiated |
+| Grip force | 5–8 N (MP1) | Analytically feasible | Untested |
+| Material | FDM PLA (MP1) | FDM PLA (FilaTech PolyPro) | Met |
+| Part count | < 15 (MP1) | 25 | Over target |
+| Cost per unit | < $3 at 500 units (MP1) | ~$2–3 estimated | Estimated |
+
+¹ The MP1 brief specifies a ~25 mm grip-object size, not a numeric jaw opening. The team adopted ≥40 mm as a self-imposed jaw-opening target — comfortably clearing the 25 mm grip object and approximating roughly half the BigClaw's 0–86 mm clamping range.
 
 ---
 

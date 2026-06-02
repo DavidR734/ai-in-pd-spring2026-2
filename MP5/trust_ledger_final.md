@@ -16,7 +16,7 @@ The trust assessment below is carried forward from MP4 Part B with MP5-specific 
 
 **What's verified:**
 - Transmission angle: 61.3°–91.3° across −50° to +50° sweep (21.3° margin above 40° floor)
-- Single-side displacement: 20.06 mm → 40.13 mm total jaw opening (meets 40 mm MP1 target)
+- Single-side displacement: 20.06 mm → 40.13 mm total jaw opening (meets the team's self-imposed 40 mm target; the MP1 brief specifies only a ~25 mm grip-object size)
 - No interference across full sweep
 - N = 1 coupling check: Part A range = operating range (no mismatch)
 - **[MP5 UPDATE]** Comparison plots (`plots/displacement_comparison.png`, `plots/mu_comparison.png`) confirm David's and Haben's designs on same axes — selection rationale is documented and defensible

@@ -8,7 +8,7 @@ continues. Don't redo work in MP5 that this document already captured.
 
 ## Final Design Summary
 
-The MiniClaw uses Haben Berhe's crossed-branch four-bar linkage (L1=47, L2=20, L3=29, L4=23, O4=(47,0)) with a −50° to +50° input range (100° sweep) producing 40.13 mm total jaw opening — meeting the MP1 40 mm target. The drive train is a single spur pair (Architecture A): two identical 20T gears at m=1.0, meshing 1:1 for counter-rotation synchronization. Overall reduction N = 1, giving 0.28 thumb-wheel turns from open to closed. The team accepts this deviation from the MP1 2–3 turn target in exchange for dramatically simpler mechanics (2 gears vs. 5, 20 mm center distance vs. 126 mm). Pin bores increased to Ø3.40 mm for reliable post-FDM sliding fit.
+The MiniClaw uses Haben Berhe's crossed-branch four-bar linkage (L1=47, L2=20, L3=29, L4=23, O4=(47,0)) with a −50° to +50° input range (100° sweep) producing 40.13 mm total jaw opening — meeting the team's self-imposed 40 mm target (the MP1 brief specifies only a ~25 mm grip-object size, not a numeric jaw opening). The drive train is a single spur pair (Architecture A): two identical 20T gears at m=1.0, meshing 1:1 for counter-rotation synchronization. Overall reduction N = 1, giving 0.28 thumb-wheel turns from open to closed. The team accepts this deviation from the MP1 2–3 turn target in exchange for dramatically simpler mechanics (2 gears vs. 5, 20 mm center distance vs. 126 mm). Pin bores increased to Ø3.40 mm for reliable post-FDM sliding fit.
 
 ---
 
@@ -17,7 +17,7 @@ The MiniClaw uses Haben Berhe's crossed-branch four-bar linkage (L1=47, L2=20, L
 Pulled directly from the per-subsystem trust assessment.
 
 - Linkage kinematics: transmission angle stays in the 61.3°–91.3° band across full −50° to +50° input range (21.3° margin above 40° floor), verified by three independent methods (code, hand calc, centaur loop) agreeing within 0.1 mm.
-- Single-side displacement of 20.06 mm delivers 40.13 mm total jaw opening, meeting the MP1 target.
+- Single-side displacement of 20.06 mm delivers 40.13 mm total jaw opening, meeting the team's self-imposed 40 mm target.
 - No interference detected across full linkage sweep.
 - Drive train packaging: 20 mm center distance fits within 92 mm housing with 72 mm clearance. The packaging problem from the compound train is eliminated.
 - Gear stress: Lewis bending SF = 2.14 at nominal torque (0.3 N·m) for the 20T gear — comfortable margin against 25 MPa printed PLA.
@@ -51,7 +51,7 @@ Pulled directly from the per-subsystem trust assessment.
 
 ## The Wrong-AI Moment
 
-The AI (Devin) initially designed David's Part A linkage with a 40 mm jaw opening target and 0°–46° input range, producing parameters that looked correct (L1=L3=12, L2=L4=26, 20.3 mm single-side displacement). But when David provided his MP1 and MP3 context documents, the real target turned out to be 25 mm jaw opening with a 0°–28° input range — the AI had been confidently designing to the wrong specification because it lacked the project context. The error was caught because David compared the AI's output against his own prior work. The fix required updating all sections, evidence files, and motion artifacts.
+The AI (Devin) initially designed David's Part A linkage to a guessed 40 mm jaw opening with a 0°–46° input range, producing parameters that looked correct (L1=L3=12, L2=L4=26, 20.3 mm single-side displacement). But when David provided his MP1 and MP3 context documents, the design basis shifted to David's own MP1 Part B figures — a ~25 mm jaw opening (sized to grip the brief's ~25 mm object) with a 0°–28° input range — and the link lengths changed accordingly. The AI had been confidently designing to specifications it invented because it lacked the project context. The error was caught because David compared the AI's output against his own prior work. The fix required updating all sections, evidence files, and motion artifacts.
 
 This directly illustrates the Centaur Engineering and Context Management pillars: the AI does the math correctly but needs the human to supply and validate the right inputs. Without the MP1/MP3 context, the AI produced a technically sound but factually wrong design.
 
