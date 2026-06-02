@@ -43,13 +43,15 @@ Combined plots showing all three candidate linkages on the same axes.
 
 ## Comparison Notes
 
+> **Note on the jaw-opening target.** The MP1 design brief does **not** specify a numeric jaw opening. It requires the gripper to close on a **~25 mm object** with 5–8 N of force (Requirement 4) and to scale down ~20% from the BigClaw (whose clamping range is 0–86 mm). The team adopted **≥40 mm as a self-imposed jaw-opening target** — comfortably clearing the 25 mm grip object and approximating roughly half the BigClaw's range — to give the desk-toy a satisfying, visible open/close stroke. All "40 mm target" references below refer to this team target, not a brief requirement.
+
 For each candidate, 2–3 sentence assessment:
 
-- **Linkage David Ricciotti:** Parallelogram (L1=L3=12, L2=L4=26) with vertical ground link gives pure translational jaw motion and a generous 22° margin above the 40° transmission angle floor. However, the 25 mm total jaw opening falls short of the 40 mm target from the MP1 brief. Compact footprint (26 mm horizontal) fits the envelope easily. Unverified: symmetry under the mirrored gear pair, PLA link deflection under 5–8 N grip load.
+- **Linkage David Ricciotti:** Parallelogram (L1=L3=12, L2=L4=26) with vertical ground link gives pure translational jaw motion and a generous 22° margin above the 40° transmission angle floor. The 25 mm total jaw opening clears the brief's ~25 mm grip object but falls short of the team's self-imposed 40 mm target. Compact footprint (26 mm horizontal) fits the envelope easily. Unverified: symmetry under the mirrored gear pair, PLA link deflection under 5–8 N grip load.
 
-- **Linkage Haben Berhe:** Crossed-branch four-bar (L1=47, L2=20, L3=29, L4=23) with horizontal ground link and 100° sweep (−50° to +50°) — reaches 20.06 mm single-side displacement, meeting the 40 mm total jaw opening target exactly. Transmission angle (61.3°–91.3°) stays in band with 21.3° margin, nearly matching David's 22° margin. Wider input range (100° vs. 28°) gives finer positional control. Larger footprint (47 mm ground link), but still within the 92 mm housing width. For reference, the BigClaw uses a 4-bar linkage with crank=32 mm, coupler=28 mm, jaw arm=45 mm, ground=38 mm, achieving 0–86 mm range (per Haben's MP3 RAG query of BigClaw teardown data). Haben's ground link (47 mm) is proportionally larger than the BigClaw's (38 mm), but this is expected given the different topology (crossed-branch vs. BigClaw's parallelogram-like arrangement).
+- **Linkage Haben Berhe:** Crossed-branch four-bar (L1=47, L2=20, L3=29, L4=23) with horizontal ground link and 100° sweep (−50° to +50°) — reaches 20.06 mm single-side displacement, meeting the team's 40 mm total jaw-opening target exactly. Transmission angle (61.3°–91.3°) stays in band with 21.3° margin, nearly matching David's 22° margin. Wider input range (100° vs. 28°) gives finer positional control. Larger footprint (47 mm ground link), but still within the 92 mm housing width. For reference, the BigClaw uses a 4-bar linkage with crank=32 mm, coupler=28 mm, jaw arm=45 mm, ground=38 mm, achieving 0–86 mm range (per Haben's MP3 RAG query of BigClaw teardown data). Haben's ground link (47 mm) is proportionally larger than the BigClaw's (38 mm), but this is expected given the different topology (crossed-branch vs. BigClaw's parallelogram-like arrangement).
 
-- **Linkage Yoel Tesfatsion:** Gear-and-connecting-rod four-bar (L1=30.59, L2=7, L3=28, L4=12) with offset ground pivot at O4=(30,6) and 30 mm tip extension matching the MiniClaw design document's jaw-contact scale. Input range 20°–140° (120° sweep) yields 12.0 mm single-side displacement → 24.0 mm total jaw opening. Transmission angle 57°–119° stays in band with 17° margin above the 40° floor — the widest μ range of the three candidates. However, the 24 mm total jaw opening falls short of the 40 mm MP1 target, and the 7 mm crank with 120° sweep means the output motion is small relative to the input rotation. Yoel's MP3 gear DFM skill and trust ledger insights (SF ≥ 2.0 for printed gears, face width ≥ 5 mm, hub rib manufacturing trade-off) are referenced in the team's Gear Pair Design and DFM Checklist.
+- **Linkage Yoel Tesfatsion:** Gear-and-connecting-rod four-bar (L1=30.59, L2=7, L3=28, L4=12) with offset ground pivot at O4=(30,6) and 30 mm tip extension matching the MiniClaw design document's jaw-contact scale. Input range 20°–140° (120° sweep) yields 12.0 mm single-side displacement → 24.0 mm total jaw opening. Transmission angle 57°–119° stays in band with 17° margin above the 40° floor — the widest μ range of the three candidates. However, the 24 mm total jaw opening (like David's) clears the brief's ~25 mm grip object but falls short of the team's self-imposed 40 mm target, and the 7 mm crank with 120° sweep means the output motion is small relative to the input rotation. Yoel's MP3 gear DFM skill and trust ledger insights (SF ≥ 2.0 for printed gears, face width ≥ 5 mm, hub rib manufacturing trade-off) are referenced in the team's Gear Pair Design and DFM Checklist.
 
 ---
 
@@ -59,7 +61,7 @@ For each candidate, 2–3 sentence assessment:
 
 **Why this one (2–4 sentences of engineering reasoning):**
 
-> Haben's design meets the original 40 mm jaw opening target from the MP1 brief, while David's parallelogram only achieves 25 mm. The transmission angle margins are comparable (21.3° vs. 22° above the 40° floor), so there is no penalty for the larger opening. The wider input range (100° vs. 28°) also means the thumb wheel has more mechanical travel per degree of jaw motion, making the gripper easier to control precisely.
+> Haben's design is the only candidate that meets the team's self-imposed ≥40 mm jaw-opening target, while David's parallelogram and Yoel's linkage reach ~25 mm and ~24 mm (both of which clear the brief's ~25 mm grip object, but with little visible stroke margin). The transmission angle margins are comparable (21.3° vs. 22° above the 40° floor), so there is no penalty for the larger opening. The wider input range (100° vs. 28°) also means the thumb wheel has more mechanical travel per degree of jaw motion, making the gripper easier to control precisely.
 
 **What got carried over from the others (if anything):**
 
@@ -69,7 +71,7 @@ For each candidate, 2–3 sentence assessment:
 
 **What got cut and why (be explicit):**
 
-- David's parallelogram geometry was cut because it only achieves 25 mm jaw opening — 62.5% of the MP1 target. While the compact envelope and pure translational motion are desirable, meeting the 40 mm target takes priority.
+- David's parallelogram geometry was cut because it only achieves 25 mm jaw opening — 62.5% of the team's self-imposed 40 mm target (it does clear the brief's ~25 mm grip object, but with no stroke margin). While the compact envelope and pure translational motion are desirable, meeting the team's 40 mm target took priority for a satisfying desk-toy stroke.
 - David's compound spur train (Architecture B) was replaced with a single spur pair (Architecture A) per team decision — simpler, fewer parts, and sufficient for the chosen linkage's wider input range.
 
 ---

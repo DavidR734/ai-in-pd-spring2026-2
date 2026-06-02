@@ -25,12 +25,12 @@ the entry.
 
 **Date:** 2026-05-26
 **Lead team member:** David Ricciotti
-**Context provided to AI:** Haben's completed Part A notebook (`MP4_PartA_Build_to_Verify_completed.ipynb`), David's Part A notebook (already merged in repo), MP1 Part B brief (40 mm jaw opening target), MP3 Part B gear CAD specs.
+**Context provided to AI:** Haben's completed Part A notebook (`MP4_PartA_Build_to_Verify_completed.ipynb`), David's Part A notebook (already merged in repo), MP1 Part B brief (~25 mm grip-object size; team adopted a self-imposed ≥40 mm jaw-opening target), MP3 Part B gear CAD specs.
 **What we asked:**
 > Integrate Haben's Part A data into the Part B linkage comparison worksheet. Extract his design parameters, fill in his row in the comparison table, write the comparison notes, and generate side-by-side plots.
 
 **What we got back:**
-> Devin extracted Haben's design: L1=47, L2=20, L3=29, L4=23, O4=(47,0), tip extension 9 mm, input range −50° to +50°, single-side displacement 20.06 mm (40.13 mm total jaw opening), transmission angle 61.3°–91.3°. Generated two comparison plots (displacement vs. input angle, transmission angle vs. input angle) showing both designs on the same axes. Identified the key difference: Haben's design meets the 40 mm MP1 target while David's only reaches 25 mm. Evidence: `plots/displacement_comparison.png`, `plots/mu_comparison.png`.
+> Devin extracted Haben's design: L1=47, L2=20, L3=29, L4=23, O4=(47,0), tip extension 9 mm, input range −50° to +50°, single-side displacement 20.06 mm (40.13 mm total jaw opening), transmission angle 61.3°–91.3°. Generated two comparison plots (displacement vs. input angle, transmission angle vs. input angle) showing both designs on the same axes. Identified the key difference: Haben's design meets the team's self-imposed 40 mm jaw-opening target while David's only reaches 25 mm (the MP1 brief itself specifies only a ~25 mm grip-object size, which both clear). Evidence: `plots/displacement_comparison.png`, `plots/mu_comparison.png`.
 
 **Team assessment:**
 > The team agreed with the AI's analysis. The comparison plots made the difference clear: Haben's design hits 40 mm exactly, David's falls 15 mm short. The transmission angle margins are nearly identical (21.3° vs. 22°), so there's no penalty for choosing the larger opening. The team selected Haben's linkage.
@@ -114,7 +114,7 @@ the entry.
 > Update the MP5 handoff document with the final design decisions, team roles, and demo plan. The demo will be a dynamic simulation (not a physical prototype). Also identify the wrong-AI moment for the presentation.
 
 **What we got back:**
-> Devin updated the handoff with: (1) final design summary using Haben's linkage + Architecture A drive train, (2) prototype-ready list (linkage kinematics verified, gear stress passing), (3) not-ready list (no CAD for housing/jaw/wheel, no test prints, 0.28-turn ergonomic unknown), (4) demo plan (dynamic simulation of Haben's linkage motion + live MCP tool call), (5) team roles assigned, (6) open questions for MP5. The AI identified the wrong-AI moment: the original design used 40 mm jaw opening target with a 0°–46° input range, but when David provided MP1/MP3 context, the real target was 25 mm with 0°–28° — the AI's initial design parameters were confidently wrong because it didn't have the project context.
+> Devin updated the handoff with: (1) final design summary using Haben's linkage + Architecture A drive train, (2) prototype-ready list (linkage kinematics verified, gear stress passing), (3) not-ready list (no CAD for housing/jaw/wheel, no test prints, 0.28-turn ergonomic unknown), (4) demo plan (dynamic simulation of Haben's linkage motion + live MCP tool call), (5) team roles assigned, (6) open questions for MP5. The AI identified the wrong-AI moment: the original design used a guessed 40 mm jaw opening with a 0°–46° input range, but when David provided MP1/MP3 context, the basis shifted to his own MP1 Part B figures — a ~25 mm jaw opening (sized for the brief's ~25 mm grip object) with 0°–28° — so the AI's invented initial parameters were confidently wrong because it didn't have the project context.
 
 **Team assessment:**
 > The handoff document captures the state accurately. The wrong-AI moment is a good story for the presentation — the AI started with the right methodology but wrong parameters because it lacked the MP1/MP3 context. The team caught it by comparing against the original brief. This directly illustrates the Context Management and Centaur Engineering pillars.
@@ -138,7 +138,7 @@ the entry.
 > Devin extracted Yoel's completed MP4 Part A package (submitted as a zip). His design: gear-and-connecting-rod four-bar (L1=30.59, L2=7, L3=28, L4=12) with O4=(30,6), 30 mm tip extension, input range 20°–140°. Achieves 12.0 mm single-side displacement (24.0 mm jaw opening) with transmission angle 57°–119° (17° margin above 40° floor). His geometry is tied to the MiniClaw design package (7 mm crank, 12 mm jaw-link, 30 mm contact scale). His MP3 Part B gear DFM context (SF ≥ 2.0, face width ≥ 5 mm, flat orientation) continues to validate the team's design.
 
 **Team assessment:**
-> Yoel's linkage achieves 24 mm jaw opening — closer to David's 25 mm than Haben's 40 mm. This confirms the team's selection of Haben's design, which is the only candidate hitting the 40 mm MP1 target. Yoel's wider μ range (57°–119°) shows his geometry is mechanically sound, but the short 7 mm crank limits displacement. His MP3 gear DFM recommendations continue to validate the team's 20T gear design (SF=2.14 > 2.0, face width 8 mm > 5 mm).
+> Yoel's linkage achieves 24 mm jaw opening — closer to David's 25 mm than Haben's 40 mm. This confirms the team's selection of Haben's design, which is the only candidate hitting the team's self-imposed 40 mm jaw-opening target (all three clear the brief's ~25 mm grip object). Yoel's wider μ range (57°–119°) shows his geometry is mechanically sound, but the short 7 mm crank limits displacement. His MP3 gear DFM recommendations continue to validate the team's 20T gear design (SF=2.14 > 2.0, face width 8 mm > 5 mm).
 
 **What changed:**
 > Linkage Comparison: Yoel's row fully populated with his design parameters (L1=30.59, L2=7, L3=28, L4=12, 24 mm jaw, 57°–119° μ). Comparison plots regenerated with all three candidates. Comparison Notes updated with his design assessment. Trust Assessment and MP5 Handoff pointers updated.

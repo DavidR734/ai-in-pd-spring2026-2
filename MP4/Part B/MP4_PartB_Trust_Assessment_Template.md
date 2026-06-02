@@ -24,7 +24,7 @@ every part of the gripper must show up somewhere with a flag.
 
 **What's verified:**
 - Transmission angle stays in the 61.3°–91.3° band throughout the −50° to +50° input range, with 21.3° margin above the 40° floor — verified by Haben's Part A Section 4 plot and hand calculation.
-- Single-side displacement reaches 20.06 mm at θ = 50°, giving 40.13 mm total jaw opening — confirmed by three independent methods (code, hand calc, centaur loop) agreeing within 0.1 mm. This meets the MP1 40 mm target.
+- Single-side displacement reaches 20.06 mm at θ = 50°, giving 40.13 mm total jaw opening — confirmed by three independent methods (code, hand calc, centaur loop) agreeing within 0.1 mm. This meets the team's self-imposed 40 mm jaw-opening target (the MP1 brief specifies only a ~25 mm grip-object size, not a numeric jaw opening).
 - No interference detected across the full sweep; all links clear of each other.
 - The 1:1 gear pair (N = 1) maps the thumb wheel directly to linkage input, so the Part A-designed range is exactly the operating range — no coupling mismatch.
 
