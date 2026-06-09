@@ -96,4 +96,4 @@ top-to-bottom and:
 - [x] The wrong-AI moment is specific enough that someone could fact-check it
 - [x] The narrative through-line is one sentence the team can say without
       reading from the page
-- [ ] Every team member can speak to at least one pillar from memory
+- [x] Every team member can speak to at least one pillar from memory
